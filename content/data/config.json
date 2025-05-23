@@ -10,12 +10,12 @@
         "primaryLinks": [
             {
                 "type": "Link",
-                "label": "Info",
+                "label": "معلومات عنا",
                 "url": "/info"
             },
             {
                 "type": "Link",
-                "label": "Projects",
+                "label": "اتصل بنا",
                 "url": "/projects"
             },
             {
@@ -27,17 +27,17 @@
         "socialLinks": [
             {
                 "type": "Social",
-                "altText": "Twitter",
-                "label": "Twitter",
-                "url": "https://twitter.com/netlify",
-                "icon": "twitter"
+                "altText": "Facebook",
+                "label": "Facebook",
+                "url": "https://www.facebook.com/yourpage",
+                "icon": "facebook"
             },
             {
                 "type": "Social",
-                "altText": "GitHub",
-                "label": "GitHub",
-                "url": "https://github.com/netlify-templates",
-                "icon": "github"
+                "altText": "YouTube",
+                "label": "YouTube",
+                "url": "https://www.youtube.com/yourchannel",
+                "icon": "youtube"
             }
         ],
         "styles": {
@@ -51,7 +51,7 @@
         "primaryLinks": [
             {
                 "type": "Link",
-                "label": "Info",
+                "label": "معلومات عنا ",
                 "url": "/info",
                 "altText": ""
             },

@@ -1,7 +1,9 @@
+
+
+import { ContentObject, GlobalProps } from '@/types';
 import dynamic from 'next/dynamic';
 import { ComponentType } from 'react';
 import { Annotated } from './Annotated';
-import { ContentObject, GlobalProps } from '@/types';
 
 /**
  * Since the layout of pages is dynamic (e.g. a page can have sections of different types, sections can have blocks of various types, etc.),
@@ -74,5 +76,21 @@ const components = {
     PostLayout: dynamic(() => import('./layouts/PostLayout')),
     PostFeedLayout: dynamic(() => import('./layouts/PostFeedLayout')),
     ProjectLayout: dynamic(() => import('./layouts/ProjectLayout')),
-    ProjectFeedLayout: dynamic(() => import('./layouts/ProjectFeedLayout'))
+    ProjectFeedLayout: dynamic(() => import('./layouts/ProjectFeedLayout')),
+
+    // أضف هذا السطر لتسجيل MarkdownSection
+    MarkdownSection: dynamic(() => import('./sections/MarkdownSection')),
+    DesignsSection: dynamic(() => import('./sections/DesignsSection')),
+    ImageTextSection: dynamic(() => import('./sections/ImageTextSection')),
+    ServicesSection: dynamic(() => import('./sections/ServicesSection')),
+    SocialIconsSection: dynamic(() => import('./sections/SocialIconsSection')),
+    FeatureSliderSection: dynamic(() => import('./sections/FeatureSliderSection')),
+
+
+
+
+
+
+
+
 };

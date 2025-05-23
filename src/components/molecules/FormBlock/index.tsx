@@ -1,34 +1,53 @@
 import classNames from 'classnames';
-import * as React from 'react';
+import { useRef, useState } from 'react';
 
 import { Annotated } from '@/components/Annotated';
 import { DynamicComponent } from '@/components/components-registry';
 import { mapStylesToClassNames as mapStyles } from '@/utils/map-styles-to-class-names';
 
 export default function FormBlock(props) {
-    const formRef = React.createRef<HTMLFormElement>();
     const { elementId, className, fields = [], submitLabel, styles = {} } = props;
+    const formRef = useRef(null);
+    const [status, setStatus] = useState('');
 
     if (fields.length === 0) {
         return null;
     }
 
-    function handleSubmit(event) {
+    async function handleSubmit(event) {
         event.preventDefault();
+        const form = formRef.current;
+        const formData = new FormData(form);
 
-        const data = new FormData(formRef.current);
-        const value = Object.fromEntries(data.entries());
-        alert(`Form data: ${JSON.stringify(value)}`);
+        const res = await fetch('https://formspree.io/f/xrbqvory', {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+            },
+            body: formData,
+        });
+
+        if (res.ok) {
+            form.reset();
+            setStatus('تم الإرسال بنجاح ✅');
+        } else {
+            setStatus('حدث خطأ أثناء الإرسال ❌');
+        }
     }
 
     return (
         <Annotated content={props}>
-            <form className={className} name={elementId} id={elementId} onSubmit={handleSubmit} ref={formRef}>
+            <form
+                className={className}
+                name={elementId}
+                id={elementId}
+                ref={formRef}
+                onSubmit={handleSubmit}
+            >
                 <div className="grid gap-6 sm:grid-cols-2">
-                    <input type="hidden" name="form-name" value={elementId} />
-                    {fields.map((field, index) => {
-                        return <DynamicComponent key={index} {...field} />;
-                    })}
+                    {fields.map((field, index) => (
+                        <DynamicComponent key={index} {...field} />
+                    ))}
                 </div>
                 <div className={classNames('mt-8', mapStyles({ textAlign: styles.self?.textAlign ?? 'left' }))}>
                     <button
@@ -37,6 +56,7 @@ export default function FormBlock(props) {
                     >
                         {submitLabel}
                     </button>
+                    {status && <p className="mt-4 text-green-400">{status}</p>}
                 </div>
             </form>
         </Annotated>

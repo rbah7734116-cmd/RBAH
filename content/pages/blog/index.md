@@ -1,6 +1,6 @@
 ---
-type: PostFeedLayout
-title: Blog
+type: PageLayout
+title: ثيم شوبيفاي المطور
 colors: colors-a
 backgroundImage:
   type: BackgroundImage
@@ -9,40 +9,56 @@ backgroundImage:
   backgroundPosition: center
   backgroundRepeat: no-repeat
   opacity: 75
-postFeed:
-  type: PostFeedSection
-  colors: colors-f
-  showDate: true
-  showAuthor: false
-  showExcerpt: true
-  showFeaturedImage: true
-  showReadMoreLink: true
-  variant: variant-d
-  styles:
-    self:
-      width: narrow
-      padding:
-        - pt-0
-        - pl-4
-        - pr-4
-        - pb-12
-topSections:
+
+sections:
   - type: HeroSection
-    title: Blog
-    subtitle: ''
+    title: ثيم شوبيفاي المطور
+    subtitle: "أطلق متجرك بمظهر احترافي وتجربة مستخدم فائقة السرعة"
     actions: []
     colors: colors-f
     backgroundSize: full
-    elementId: ''
     styles:
       self:
         height: auto
-        width: narrow
+        width: wide
         padding:
-          - pt-16
-          - pb-16
+          - pt-20
+          - pb-12
           - pl-4
           - pr-4
-        flexDirection: row
-        textAlign: left
+        textAlign: center
+
+  - type: ImageTextSection
+    name: الثيم المطور
+    headline: مصمم لزيادة المبيعات وسرعة التصفح
+    text: >
+      نقدم لك ثيم شوبيفاي المطور — تجربة تصميم فريدة تعتمد على أحدث تقنيات الأداء.  
+      تم بناء هذا الثيم خصيصًا لأصحاب المتاجر الذين يسعون لتحقيق مبيعات أعلى من خلال تصميم متجاوب، سريع، وسهل التخصيص.
+
+      مزايا الثيم:
+      - سرعة تحميل فائقة.
+      - تجربة مستخدم سلسة على جميع الأجهزة.
+      - تصميم مرن يناسب جميع أنواع المنتجات.
+      - كود نظيف ومحسن لمحركات البحث (SEO).
+    image:
+      src: /images/theme-preview.jpg
+      alt: معاينة الثيم
+
+  - type: CtaSection
+    title: جاهز لتطوير متجرك؟
+    text: "احصل على الثيم الآن وابدأ في تحويل الزوار إلى عملاء حقيقيين."
+    actions:
+      - type: Button
+        label: احصل على الثيم الآن
+        url: /contact
+        style: primary
+    colors: colors-f
+    styles:
+      self:
+        padding:
+          - pt-12
+          - pb-16
+        textAlign: center
+  - type: FeatureSliderSection
+
 ---
