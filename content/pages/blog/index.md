@@ -60,5 +60,7 @@ sections:
           - pb-16
         textAlign: center
   - type: FeatureSliderSection
+  - type: BeforeAfterSection
+
 
 ---
