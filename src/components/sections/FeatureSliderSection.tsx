@@ -4,8 +4,8 @@ export default function FeatureSliderSection() {
     useEffect(() => {
         const slides = document.querySelectorAll(".slidev8");
         slides.forEach((slide) => {
-            const playButton = slide.querySelector(".play-buttonv8");
-            const pauseButton = slide.querySelector(".pause-buttonv8");
+            const playButton = slide.querySelector(".play-buttonv8") as HTMLElement;
+            const pauseButton = slide.querySelector(".pause-buttonv8") as HTMLElement;
             const video = slide.querySelector("video");
 
             let hidePauseButtonTimeout;
