@@ -52,7 +52,7 @@ export default function FeatureSliderSection() {
                     {videos.map((vid, index) => (
                         <div key={index} className="flex flex-col items-center flex-shrink-0" style={{ width: '250px' }}>
                             <div className="relative rounded-lg bg-[#174059] p-1">
-                                <video className="rounded-lg w-full aspect-[9/18]" loop muted playsInline>
+                                <video className="rounded-lg w-full aspect-[9/18]" autoPlay loop muted playsInline>
                                     <source src={vid.src} type="video/mp4" />
                                     Your browser does not support the video tag.
                                 </video>
