@@ -61,6 +61,8 @@ sections:
         textAlign: center
   - type: FeatureSliderSection
   - type: BeforeAfterSection
+  - type: ProductShowcaseSection
+  - type: ShowcaseScrollerSection
 
 
 ---

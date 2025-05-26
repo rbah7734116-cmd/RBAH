@@ -1,55 +1,107 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 export default function BeforeAfterSection() {
-    useEffect(() => {
-        const container = document.querySelector('.custom-before_after') as HTMLElement;
-        const slider = container?.querySelector('.custom-ba-slider') as HTMLInputElement;
-        const beforeImage = container?.querySelector('.custom-before_img') as HTMLElement;
+    const containerRef = useRef<HTMLDivElement>(null);
+    const afterRef = useRef<HTMLImageElement>(null);
+    const sliderRef = useRef<HTMLDivElement>(null);
 
-        if (slider && beforeImage) {
-            slider.addEventListener('input', () => {
-                beforeImage.style.width = `${slider.value}%`;
-                container.style.setProperty('--position', `${slider.value}%`);
-            });
-        }
+    useEffect(() => {
+        const comparisonContainer = containerRef.current;
+        const afterImage = afterRef.current;
+        const slider = sliderRef.current;
+
+        if (!comparisonContainer || !afterImage || !slider) return;
+
+        let isDragging = false;
+
+        const updateSlider = (x: number) => {
+            const containerRect = comparisonContainer.getBoundingClientRect();
+            let position = x - containerRect.left;
+            position = Math.max(0, Math.min(position, containerRect.width));
+            slider.style.left = position + 'px';
+            afterImage.style.clipPath = `inset(0 ${containerRect.width - position}px 0 0)`;
+        };
+
+        const onMouseMove = (e: MouseEvent) => {
+            if (isDragging) updateSlider(e.clientX);
+        };
+
+        const onTouchMove = (e: TouchEvent) => {
+            if (isDragging) updateSlider(e.touches[0].clientX);
+        };
+
+        slider.addEventListener('mousedown', () => {
+            isDragging = true;
+            window.addEventListener('mousemove', onMouseMove);
+        });
+
+        window.addEventListener('mouseup', () => {
+            isDragging = false;
+            window.removeEventListener('mousemove', onMouseMove);
+        });
+
+        slider.addEventListener('touchstart', () => {
+            isDragging = true;
+            window.addEventListener('touchmove', onTouchMove);
+        });
+
+        window.addEventListener('touchend', () => {
+            isDragging = false;
+            window.removeEventListener('touchmove', onTouchMove);
+        });
+
+        // Auto animate
+        let position = 0;
+        let direction = 1;
+        const moveDistance = 0.5;
+
+        const interval = setInterval(() => {
+            const containerRect = comparisonContainer.getBoundingClientRect();
+            const maxPosition = containerRect.width * moveDistance;
+
+            position += direction * 5;
+            if (position >= maxPosition || position <= 0) {
+                direction *= -1;
+            }
+
+            updateSlider(containerRect.left + position);
+        }, 20);
+
+        return () => clearInterval(interval);
     }, []);
 
     return (
-        <main className="custom-ba_main bg-black py-10 px-4 text-center">
-            <h2 className="text-white text-[25px] font-extrabold mb-2">The Results Speak For Themselves!</h2>
-            <p className="text-white text-sm mb-6">
-                This brand tripled their business in 3 months, Same ad spend, different website!
-            </p>
-            <div
-                className="custom-containers custom-before_after relative max-w-4xl mx-auto"
-                style={{ ['--position' as any]: '50%' }}
-            >
-                <div className="custom-image-containers relative">
-                    <div className="custom-before_img absolute top-0 left-0 w-1/2 h-full overflow-hidden transition-all duration-300">
-                        <img
-                            src="https://cdn.shopify.com/s/files/1/0914/3228/8605/files/Untitled_design_82.png?v=1737226160"
-                            className="w-full h-auto"
-                            alt="Before"
-                        />
-                        <span className="absolute top-2 left-2 bg-black text-white px-2 text-sm">Before</span>
-                    </div>
-                    <div className="custom-after_img">
-                        <img
-                            src="https://cdn.shopify.com/s/files/1/0914/3228/8605/files/Untitled_design_84.png?v=1737227934"
-                            className="w-full h-auto"
-                            alt="After"
-                        />
-                        <span className="absolute top-2 right-2 bg-black text-white px-2 text-sm">After</span>
-                    </div>
+        <section className="bg-[#1a1d29] text-white text-right px-6 py-12">
+            <div className="max-w-4xl mx-auto">
+                <h2 className="text-3xl font-extrabold text-center mb-4">
+                    النتائج تتحدث عن نفسها!
+                </h2>
+                <p className="text-center text-sm mb-10">
+                    لقد ضاعفت هذه العلامة التجارية أعمالها ثلاث مرات في ثلاثة أشهر، نفس الإنفاق الإعلاني، موقع ويب مختلف!
+                </p>
+                <div
+                    className="relative w-full max-w-[550px] aspect-[4/3] mx-auto overflow-hidden rounded-lg"
+                    ref={containerRef}
+                >
+                    <img
+                        src="https://nurojilt.com/wp-content/uploads/2025/04/Untitled_design_84.webp"
+                        alt="Before"
+                        className="absolute top-0 left-0 w-full h-full object-cover"
+                    />
+                    <img
+                        src="https://nurojilt.com/wp-content/uploads/2025/04/Untitled_design_82.webp"
+                        alt="After"
+                        className="absolute top-0 left-0 w-full h-full object-cover after"
+                        ref={afterRef}
+                        style={{ clipPath: 'inset(0 50% 0 0)' }}
+                    />
+                    <div
+                        ref={sliderRef}
+                        className="absolute top-0 left-1/2 w-[3px] h-full bg-white z-10 cursor-ew-resize opacity-50"
+                        style={{ transform: 'translateX(-50%)' }}
+                    ></div>
                 </div>
-                <input
-                    type="range"
-                    min="0"
-                    max="100"
-                    defaultValue={50}
-                    className="custom-ba-slider absolute bottom-4 left-1/2 transform -translate-x-1/2 w-3/4"
-                />
             </div>
-        </main>
+        </section>
     );
 }

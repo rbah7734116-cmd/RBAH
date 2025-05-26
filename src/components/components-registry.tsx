@@ -86,6 +86,10 @@ const components = {
     SocialIconsSection: dynamic(() => import('./sections/SocialIconsSection')),
     FeatureSliderSection: dynamic(() => import('./sections/FeatureSliderSection')),
     BeforeAfterSection: dynamic(() => import('./sections/BeforeAfterSection')),
+    ProductShowcaseSection: dynamic(() => import('./sections/ProductShowcaseSection')),
+    ShowcaseScrollerSection: dynamic(() => import('./sections/ShowcaseScrollerSection')),
+
+
 
 
 
