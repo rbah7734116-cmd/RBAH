@@ -64,6 +64,8 @@ sections:
   - type: ProductShowcaseSection
   - type: ShowcaseScrollerSection
   - type: PortfolioGallerySection
+  - type: MarqueeAnnouncementBar
+  - type: StoreExamplesSection
 
 
 

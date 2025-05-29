@@ -89,6 +89,10 @@ const components = {
     ProductShowcaseSection: dynamic(() => import('./sections/ProductShowcaseSection')),
     ShowcaseScrollerSection: dynamic(() => import('./sections/ShowcaseScrollerSection')),
     PortfolioGallerySection: dynamic(() => import('./sections/PortfolioGallerySection')),
+    MarqueeAnnouncementBar: dynamic(() => import('./sections/MarqueeAnnouncementBar')),
+    StoreExamplesSection: dynamic(() => import('./sections/StoreExamplesSection')),
+
+
 
 
 
