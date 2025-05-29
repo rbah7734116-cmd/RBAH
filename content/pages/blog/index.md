@@ -63,6 +63,8 @@ sections:
   - type: BeforeAfterSection
   - type: ProductShowcaseSection
   - type: ShowcaseScrollerSection
+  - type: PortfolioGallerySection
+
 
 
 ---

@@ -88,6 +88,8 @@ const components = {
     BeforeAfterSection: dynamic(() => import('./sections/BeforeAfterSection')),
     ProductShowcaseSection: dynamic(() => import('./sections/ProductShowcaseSection')),
     ShowcaseScrollerSection: dynamic(() => import('./sections/ShowcaseScrollerSection')),
+    PortfolioGallerySection: dynamic(() => import('./sections/PortfolioGallerySection')),
+
 
 
 
