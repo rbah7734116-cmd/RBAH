@@ -58,8 +58,7 @@ export default function ShopifyStyleProductSection() {
                                             muted
                                             loop
                                             playsInline
-                                            className={`rounded-md w-[100px] h-[100px] object-cover ${item === activeMedia ? 'ring-2 ring-cyan-400' : ''
-                                                }`}
+                                            className={`rounded-md w-[100px] h-[100px] object-cover ${item === activeMedia ? 'ring-2 ring-cyan-400' : ''}`}
                                         />
                                     ) : (
                                         <Image
@@ -67,8 +66,7 @@ export default function ShopifyStyleProductSection() {
                                             alt={`Thumbnail ${idx + 1}`}
                                             width={100}
                                             height={100}
-                                            className={`rounded-md border object-cover w-[100px] h-[100px] ${item === activeMedia ? 'ring-2 ring-cyan-400' : 'border-gray-300'
-                                                }`}
+                                            className={`rounded-md border object-cover w-[100px] h-[100px] ${item === activeMedia ? 'ring-2 ring-cyan-400' : 'border-gray-300'}`}
                                         />
                                     )}
                                 </div>
@@ -78,14 +76,9 @@ export default function ShopifyStyleProductSection() {
                 </div>
 
                 {/* Product Info */}
-                <div className="space-y-6 text-white">
-
+                <div className="text-white">
                     {/* شريط الصور والتقييم */}
                     <div className="flex items-center gap-3 scale-[0.9] mb-2">
-
-
-
-
                         {/* صور العملاء */}
                         <div className="flex -space-x-2">
                             <img src="//roarecipe.store/cdn/shop/files/images_1_100x.jpg?v=1736832949" className="w-10 h-10 rounded-full border-2 border-white" alt="" />
@@ -100,22 +93,22 @@ export default function ShopifyStyleProductSection() {
                     </div>
 
                     {/* عنوان المنتج */}
-                    <h2 className="text-3xl font-extrabold">ROA Shopify Theme 2.0</h2>
+                    <h2 className="text-3xl font-extrabold mt-0">ROA Shopify Theme 2.0</h2>
 
                     {/* عرض التخفيض */}
-                    <p className="text-md font-semibold text-green-400">
+                    <p className="text-md font-semibold text-green-400 mb-1">
                         Flash Sale! $17 Offer Ends Midnight!
                     </p>
 
                     {/* السعر */}
-                    <div className="text-2xl font-bold text-white">
+                    <div className="text-2xl font-bold text-white mb-1">
                         $17.00
                         <span className="line-through text-gray-400 text-sm ml-2">$497.00</span>
                     </div>
-                    <p className="text-green-400 font-bold">✅ SAVE 96%</p>
+                    <p className="text-green-400 font-bold mb-4">✅ SAVE 96%</p>
 
                     {/* المميزات */}
-                    <ul className="list-disc pl-5 space-y-1 text-sm">
+                    <ul className="list-disc pl-5 space-y-1 text-sm mb-4">
                         <li>✅ Lifetime license | one-time purchase</li>
                         <li>🚫 No monthly charges or hidden fees.</li>
                         <li>⚡ Optimized for dropshipping</li>
@@ -123,12 +116,17 @@ export default function ShopifyStyleProductSection() {
                     </ul>
 
                     {/* الأزرار */}
-                    <button className="bg-cyan-400 hover:bg-cyan-500 text-black font-bold w-full py-2 rounded">
-                        BUY NOW
-                    </button>
-                    <button className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold w-full py-2 rounded mt-2">
-                        Pay with PayPal
-                    </button>
+                    <div className="space-y-2">
+                        <button className="bg-cyan-400 hover:bg-cyan-500 text-black font-bold w-full py-2 rounded">
+                            BUY NOW
+                        </button>
+                        <button className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold w-full py-2 rounded">
+                            Pay with PayPal
+                        </button>
+                        <div className="pt-2 flex justify-center">
+                            <img src="/1/payment-methods.png" alt="Payment methods" className="w-auto h-6" />
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
