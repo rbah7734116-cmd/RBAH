@@ -29,10 +29,16 @@ export default function StoreExamplesSection() {
                                 key={idx}
                                 src={src}
                                 alt={`Store Example ${idx + 1}`}
-                                width={300}
+                                width={219} // سطح المكتب
                                 height={450}
-                                className="rounded-xl shadow-md hover:scale-[1.03] transition-transform duration-300"
+                                unoptimized
+                                className="rounded-xl shadow-md hover:scale-[1.03] transition-transform duration-300 
+             w-[155.63px] h-[319.93px] 
+             md:w-[218.86px] md:h-[449.97px]"
                             />
+
+
+
                         ))}
                     </div>
                 </div>
@@ -44,25 +50,25 @@ export default function StoreExamplesSection() {
             </div>
 
             <style jsx>{`
-        .scroll-hint {
-          position: absolute;
-          top: 20px;
-          right: 16px;
-          background: linear-gradient(to right, transparent, #fff 70%);
-          padding: 5px 10px;
-          font-size: 14px;
-          font-weight: bold;
-          color: #888;
-          border-radius: 30px;
-          animation: scrollHintFade 1.5s infinite ease-in-out;
-          pointer-events: none;
-        }
+            .scroll-hint {
+            position: absolute;
+            top: 20px;
+            right: 16px;
+            background: linear-gradient(to right, transparent, #fff 70%);
+            padding: 5px 10px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #888;
+            border-radius: 30px;
+            animation: scrollHintFade 1.5s infinite ease-in-out;
+            pointer-events: none;
+            }
 
-        @keyframes scrollHintFade {
-          0%, 100% { opacity: 0.3; transform: translateX(0); }
-          50% { opacity: 1; transform: translateX(-5px); }
-        }
-      `}</style>
+            @keyframes scrollHintFade {
+            0%, 100% { opacity: 0.3; transform: translateX(0); }
+            50% { opacity: 1; transform: translateX(-5px); }
+            }
+        `}</style>
         </section>
     );
 }

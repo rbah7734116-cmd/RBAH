@@ -1,3 +1,4 @@
+'use client';
 import Image from 'next/image';
 import { useState } from 'react';
 
@@ -14,119 +15,119 @@ export default function ShopifyStyleProductSection() {
         '/1/12.webp',
         '/1/13.webp',
         '/1/22.webp',
-        '/1/23.webp'
+        '/1/23.webp',
     ];
 
     const [activeMedia, setActiveMedia] = useState(media[0]);
 
     return (
-        <section className="px-4 py-10 mx-auto w-full max-w-[1400px]">
-            <div className="grid grid-cols-1 lg:grid-cols-[663px_1fr] gap-10 items-start">
-                {/* Media Gallery */}
-                <div>
-                    <div className="mb-4 w-full h-[414px] max-w-[414px] mx-auto aspect-square lg:h-[663px] lg:max-w-[663px]">
-                        {activeMedia.endsWith('.mp4') ? (
-                            <video
-                                src={activeMedia}
-                                autoPlay
-                                muted
-                                loop
-                                playsInline
-                                className="rounded-lg w-full h-full object-cover"
-                            />
-                        ) : (
-                            <Image
-                                src={activeMedia}
-                                alt="Main product"
-                                width={600}
-                                height={600}
-                                className="rounded-lg w-full h-full object-cover"
-                            />
-                        )}
-                    </div>
-                    <div className="overflow-x-auto">
-                        <div className="flex gap-3 w-max">
-                            {media.map((item, idx) => (
-                                <div
-                                    key={idx}
-                                    className="min-w-[100px] cursor-pointer"
-                                    onClick={() => setActiveMedia(item)}
-                                >
-                                    {item.endsWith('.mp4') ? (
-                                        <video
-                                            src={item}
-                                            muted
-                                            loop
-                                            playsInline
-                                            className={`rounded-md w-[100px] h-[100px] object-cover ${item === activeMedia ? 'ring-2 ring-cyan-400' : ''}`}
-                                        />
-                                    ) : (
-                                        <Image
-                                            src={item}
-                                            alt={`Thumbnail ${idx + 1}`}
-                                            width={100}
-                                            height={100}
-                                            className={`rounded-md border object-cover w-[100px] h-[100px] ${item === activeMedia ? 'ring-2 ring-cyan-400' : 'border-gray-300'}`}
-                                        />
-                                    )}
-                                </div>
-                            ))}
+        <section className="bg-[#DFFFFF] w-full py-12">
+            <div className="px-4 mx-auto max-w-[1400px]">
+                <div className="grid grid-cols-1 lg:grid-cols-[663px_1fr] gap-10 items-start">
+
+                    {/* Media Gallery */}
+                    <div>
+                        <div className="mb-4 w-full h-[414px] max-w-[414px] mx-auto aspect-square lg:h-[663px] lg:max-w-[663px]">
+                            {activeMedia.endsWith('.mp4') ? (
+                                <video
+                                    src={activeMedia}
+                                    autoPlay
+                                    muted
+                                    loop
+                                    playsInline
+                                    className="rounded-lg w-full h-full object-cover"
+                                />
+                            ) : (
+                                <Image
+                                    src={activeMedia}
+                                    alt="Main product"
+                                    width={600}
+                                    height={600}
+                                    className="rounded-lg w-full h-full object-cover"
+                                />
+                            )}
+                        </div>
+                        <div className="overflow-x-auto">
+                            <div className="flex gap-3 w-max">
+                                {media.map((item, idx) => (
+                                    <div
+                                        key={idx}
+                                        className="min-w-[100px] cursor-pointer"
+                                        onClick={() => setActiveMedia(item)}
+                                    >
+                                        {item.endsWith('.mp4') ? (
+                                            <video
+                                                src={item}
+                                                muted
+                                                loop
+                                                playsInline
+                                                className={`rounded-md w-[100px] h-[100px] object-cover ${item === activeMedia ? 'ring-2 ring-cyan-400' : ''}`}
+                                            />
+                                        ) : (
+                                            <Image
+                                                src={item}
+                                                alt={`Thumbnail ${idx + 1}`}
+                                                width={100}
+                                                height={100}
+                                                className={`rounded-md border object-cover w-[100px] h-[100px] ${item === activeMedia ? 'ring-2 ring-cyan-400' : 'border-gray-300'}`}
+                                            />
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                {/* Product Info */}
-                <div className="text-white">
-                    {/* شريط الصور والتقييم */}
-                    <div className="flex items-center gap-3 scale-[0.9] mb-2">
-                        {/* صور العملاء */}
-                        <div className="flex -space-x-2">
-                            <img src="//roarecipe.store/cdn/shop/files/images_1_100x.jpg?v=1736832949" className="w-10 h-10 rounded-full border-2 border-white" alt="" />
-                            <img src="//roarecipe.store/cdn/shop/files/images_2_100x.jpg?v=1736832949" className="w-10 h-10 rounded-full border-2 border-white" alt="" />
-                            <img src="//roarecipe.store/cdn/shop/files/images_100x.jpg?v=1736832949" className="w-10 h-10 rounded-full border-2 border-white" alt="" />
-                            <img src="//roarecipe.store/cdn/shop/files/images_3_100x.jpg?v=1736832949" className="w-10 h-10 rounded-full border-2 border-white" alt="" />
-                            <img src="//roarecipe.store/cdn/shop/files/images_4_100x.jpg?v=1736832949" className="w-10 h-10 rounded-full border-2 border-white" alt="" />
+                    {/* Product Info */}
+                    <div className="text-black bg-white p-6 rounded-xl shadow-md border" style={{ borderColor: '#DFFFFF' }}>
+
+                        {/* Rating */}
+                        <div className="flex items-center gap-3 mb-4">
+                            <div className="flex -space-x-2">
+                                <img src="//roarecipe.store/cdn/shop/files/images_1_100x.jpg?v=1736832949" className="w-8 h-8 rounded-full border-2 border-white" alt="" />
+                                <img src="//roarecipe.store/cdn/shop/files/images_2_100x.jpg?v=1736832949" className="w-8 h-8 rounded-full border-2 border-white" alt="" />
+                                <img src="//roarecipe.store/cdn/shop/files/images_100x.jpg?v=1736832949" className="w-8 h-8 rounded-full border-2 border-white" alt="" />
+                                <img src="//roarecipe.store/cdn/shop/files/images_3_100x.jpg?v=1736832949" className="w-8 h-8 rounded-full border-2 border-white" alt="" />
+                                <img src="//roarecipe.store/cdn/shop/files/images_4_100x.jpg?v=1736832949" className="w-8 h-8 rounded-full border-2 border-white" alt="" />
+                            </div>
+                            <p className="text-sm font-semibold">★★★★★ Excellent 4.8</p>
                         </div>
 
-                        {/* التقييم */}
-                        <p className="text-sm font-semibold text-white">★★★★★ Excellent 4.8</p>
-                    </div>
+                        <h2 className="text-2xl font-bold mb-4">ROA Shopify Theme 2.0</h2>
 
-                    {/* عنوان المنتج */}
-                    <h2 className="text-3xl font-extrabold mt-0">ROA Shopify Theme 2.0</h2>
+                        <p className="text-sm font-semibold text-[#05445E] mb-4">💠 Flash Sale! $17 Offer Ends Midnight!</p>
 
-                    {/* عرض التخفيض */}
-                    <p className="text-md font-semibold text-green-400 mb-1">
-                        Flash Sale! $17 Offer Ends Midnight!
-                    </p>
+                        {/* Features */}
+                        <ul className="list-none text-sm space-y-2 mb-6">
+                            <li>✅ Lifetime license | one-time purchase</li>
+                            <li>🚫 No monthly charges or hidden fees</li>
+                            <li>🛠️ Optimized for dropshipping</li>
+                            <li>📈 30+ conversion features</li>
+                        </ul>
 
-                    {/* السعر */}
-                    <div className="text-2xl font-bold text-white mb-1">
-                        $17.00
-                        <span className="line-through text-gray-400 text-sm ml-2">$497.00</span>
-                    </div>
-                    <p className="text-green-400 font-bold mb-4">✅ SAVE 96%</p>
+                        {/* Buttons */}
+                        <div className="space-y-3">
+                            <button className="bg-cyan-400 hover:bg-cyan-500 text-black font-bold w-full py-2 rounded transition">
+                                BUY NOW
+                            </button>
+                            <button className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold w-full py-2 rounded transition">
+                                Pay with <span className="font-bold text-blue-700">PayPal</span>
+                            </button>
+                        </div>
 
-                    {/* المميزات */}
-                    <ul className="list-disc pl-5 space-y-1 text-sm mb-4">
-                        <li>✅ Lifetime license | one-time purchase</li>
-                        <li>🚫 No monthly charges or hidden fees.</li>
-                        <li>⚡ Optimized for dropshipping</li>
-                        <li>🚀 30+ conversion features</li>
-                    </ul>
-
-                    {/* الأزرار */}
-                    <div className="space-y-2">
-                        <button className="bg-cyan-400 hover:bg-cyan-500 text-black font-bold w-full py-2 rounded">
-                            BUY NOW
-                        </button>
-                        <button className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold w-full py-2 rounded">
-                            Pay with PayPal
-                        </button>
-                        <div className="pt-2 flex justify-center">
-                            <img src="/1/payment-methods.png" alt="Payment methods" className="w-auto h-6" />
+                        {/* Payment Logos */}
+                        <div className="pt-4 text-center">
+                            <p className="text-xs text-gray-500 underline cursor-pointer">More payment options</p>
+                            <div className="mt-2">
+                                <img
+                                    src="/1/f1.jpg"
+                                    alt="Payment methods"
+                                    style={{ height: '70px', width: '450px', display: 'block', margin: '0 auto' }}
+                                />
+                            </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>

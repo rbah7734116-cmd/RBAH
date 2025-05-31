@@ -59,13 +59,15 @@ sections:
           - pt-12
           - pb-16
         textAlign: center
-  - type: FeatureSliderSection
-  - type: BeforeAfterSection
-  - type: ProductShowcaseSection
-  - type: ShowcaseScrollerSection
   - type: PortfolioGallerySection
   - type: MarqueeAnnouncementBar
-  - type: StoreExamplesSection
+  - type: StoreExamplesSection      
+  - type: FeatureSliderSection
+  - type: ProductShowcaseSection
+  - type: ShowcaseScrollerSection
+  - type: BeforeAfterSection
+
+
 
 
 
