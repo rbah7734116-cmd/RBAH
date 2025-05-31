@@ -4,8 +4,12 @@ export default function ShowcaseScrollerSection() {
         'https://cdn.shopify.com/s/files/1/0914/3228/8605/files/cleanwithrevive.co.uk_products_thepatchbrand_E2_84_A2-energy-patch_iPhone_XR_3.png?v=1736818551',
         'https://cdn.shopify.com/s/files/1/0914/3228/8605/files/www.morelabs.com_products_morning-recovery_srsltid_AfmBOopYx2LXyk-MRx3TmgV9H2r2skyZL3yDIGxu0WbBy-9ulU6RoaAe_iPhone_XR.png?v=1736826407',
         'https://cdn.shopify.com/s/files/1/0914/3228/8605/files/duradry.com_products_duradry-am_iPhone_XR.png?v=1736826333',
-        'https://cdn.shopify.com/s/files/1/0914/3228/8605/files/cleanwithrevive.co.uk_products_laundry-detergent-eco-sheets_selling_plan_690928877915_variant_47501187973467_iPhone_XR_1.png?v=1736817136'
+        'https://cdn.shopify.com/s/files/1/0914/3228/8605/files/cleanwithrevive.co.uk_products_laundry-detergent-eco-sheets_selling_plan_690928877915_variant_47501187973467_iPhone_XR_1.png?v=1736817136',
+
+        // ✅ صورتك المحلية المضافة
+        '/1/98.png'
     ];
+
 
     return (
         <section className="px-4 py-10 max-w-screen-xl mx-auto">

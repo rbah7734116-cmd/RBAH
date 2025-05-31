@@ -74,10 +74,10 @@ export default function BeforeAfterSection() {
         <section className="bg-[#1a1d29] text-white text-right px-6 py-12">
             <div className="max-w-4xl mx-auto">
                 <h2 className="text-3xl font-extrabold text-center mb-4">
-                    النتائج تتحدث عن نفسها!
+                    Results speak for themselves!
                 </h2>
                 <p className="text-center text-sm mb-10">
-                    لقد ضاعفت هذه العلامة التجارية أعمالها ثلاث مرات في ثلاثة أشهر، نفس الإنفاق الإعلاني، موقع ويب مختلف!
+                    This brand tripled its business in just three months with the same ad spend, just a different website!
                 </p>
                 <div
                     className="relative w-full max-w-[550px] aspect-[4/3] mx-auto overflow-hidden rounded-lg"

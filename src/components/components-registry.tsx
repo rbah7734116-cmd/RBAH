@@ -91,6 +91,7 @@ const components = {
     PortfolioGallerySection: dynamic(() => import('./sections/PortfolioGallerySection')),
     MarqueeAnnouncementBar: dynamic(() => import('./sections/MarqueeAnnouncementBar')),
     StoreExamplesSection: dynamic(() => import('./sections/StoreExamplesSection')),
+    FeatureShowcaseSection: dynamic(() => import('./sections/FeatureShowcaseSection')),
 
 
 

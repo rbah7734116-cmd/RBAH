@@ -45,8 +45,8 @@ export default function FeatureSliderSection() {
     }, []);
 
     return (
-        <div className="bg-[#bde6ff] py-6">
-            <h2 className="text-center text-[22px] font-extrabold px-4 text-black mb-6">تخيل الميزات المذهلة التي يمكن أن يحتويها متجرك!</h2>
+        <div className="bg-[#FFFFFF] py-6">
+            <h2 className="text-center text-[22px] font-extrabold px-4 text-black mb-6"> Imagine The Amazing Features Your Website Can Have! </h2>
             <div className="overflow-x-auto max-w-6xl mx-auto px-4">
                 <div className="flex gap-4">
                     {videos.map((vid, index) => (

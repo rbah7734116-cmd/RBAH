@@ -26,7 +26,8 @@ export default function ProductShowcaseSection() {
                             className="rounded-lg w-full object-cover"
                         />
                     </div>
-                    <div className="overflow-x-auto">
+                    <div className="overflow-x-auto flex justify-center">
+
                         <div className="flex gap-3 w-max">
                             {images.map((img, idx) => (
                                 <Image

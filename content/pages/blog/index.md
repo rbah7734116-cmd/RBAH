@@ -18,4 +18,6 @@ sections:
   - type: ProductShowcaseSection
   - type: ShowcaseScrollerSection
   - type: BeforeAfterSection
+  - type: FeatureShowcaseSection
+
 ---
