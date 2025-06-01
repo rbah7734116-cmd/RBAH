@@ -92,7 +92,7 @@ const components = {
     MarqueeAnnouncementBar: dynamic(() => import('./sections/MarqueeAnnouncementBar')),
     StoreExamplesSection: dynamic(() => import('./sections/StoreExamplesSection')),
     FeatureShowcaseSection: dynamic(() => import('./sections/FeatureShowcaseSection')),
-
+    FaqSection: dynamic(() => import('./sections/FaqSection')),
 
 
 

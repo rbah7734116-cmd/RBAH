@@ -19,5 +19,7 @@ sections:
   - type: ShowcaseScrollerSection
   - type: BeforeAfterSection
   - type: FeatureShowcaseSection
+  - type: FaqSection
+
 
 ---
