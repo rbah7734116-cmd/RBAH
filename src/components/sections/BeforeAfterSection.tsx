@@ -71,7 +71,7 @@ export default function BeforeAfterSection() {
     }, []);
 
     return (
-        <section className="bg-[#1a1d29] text-white text-right px-6 py-12">
+        <section className="bg-[#EEF6FD] text-black text-right px-6 py-12">
             <div className="max-w-4xl mx-auto">
                 <h2 className="text-3xl font-extrabold text-center mb-4">
                     Results speak for themselves!

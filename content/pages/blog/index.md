@@ -20,6 +20,8 @@ sections:
   - type: BeforeAfterSection
   - type: FeatureShowcaseSection
   - type: FaqSection
+  - type: OfferSection
+
 
 
 ---
