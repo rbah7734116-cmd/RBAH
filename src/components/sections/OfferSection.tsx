@@ -44,7 +44,7 @@ export default function OfferCountdownSection() {
 
                         <div className="mb-6 text-center">
                             <p className="text-white text-4xl font-extrabold">
-                                $37 <span className="text-xl line-through text-gray-500 ml-2">$350</span>
+                                $35 <span className="text-xl line-through text-gray-500 ml-2">$350</span>
                             </p>
                         </div>
 

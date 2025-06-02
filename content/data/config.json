@@ -20,7 +20,17 @@
             },
             {
                 "type": "Link",
-                "label": "Blog",
+                "label": "كورس التصميم ",
+                "url": "/designs"
+            },
+            {
+                "type": "Link",
+                "label": "كتاب أكواد",
+                "url": "/Codebook"
+            },
+            {
+                "type": "Link",
+                "label": "ثيم الاحترافي",
                 "url": "/blog"
             }
         ],

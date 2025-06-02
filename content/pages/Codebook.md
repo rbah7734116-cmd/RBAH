@@ -12,14 +12,11 @@ backgroundImage:
 
 
 sections:
-  - type: PortfolioGallerySection
-  - type: MarqueeAnnouncementBar
+  - type: FeatureIconsSection
+
   - type: StoreExamplesSection      
-  - type: FeatureSliderSection
-  - type: ProductShowcaseSection
   - type: ShowcaseScrollerSection
   - type: BeforeAfterSection
-  - type: FeatureShowcaseSection
   - type: FaqSection
   - type: OfferSection
 

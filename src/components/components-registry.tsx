@@ -94,6 +94,7 @@ const components = {
     FeatureShowcaseSection: dynamic(() => import('./sections/FeatureShowcaseSection')),
     FaqSection: dynamic(() => import('./sections/FaqSection')),
     OfferSection: dynamic(() => import('./sections/OfferSection')),
+    FeatureIconsSection: dynamic(() => import('./sections/FeatureIconsSection')),
 
 
 
