@@ -19,6 +19,7 @@ sections:
   - type: BeforeAfterSection
   - type: FaqSection
   - type: OfferSection
+  - type: FaqAccordionSection
 
 
 

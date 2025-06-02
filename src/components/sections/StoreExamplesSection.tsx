@@ -16,7 +16,7 @@ export default function StoreExamplesSection() {
     ];
 
     return (
-        <section className="bg-white py-12 relative">
+        <section className="bg-[#FFEFD5] py-0 relative">
             <div className="max-w-screen-xl mx-auto px-4 text-center">
                 <h2 className="text-3xl font-bold text-neutral-900 mb-6">
                     Examples Stores Using ROA 2.0
