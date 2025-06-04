@@ -2,40 +2,41 @@ const services = [
     {
         video: '/video/1.mp4',
         description:
-            'نقدم حلول تطوير متاجر Shopify الرائدة، مصممة لتلبي متطلبات السوق وتوفر تجربة تسوق سلسة. نعتمد على أحدث التقنيات لضمان متجر سريع، آمن، وجاهز لاستيعاب النمو المستقبلي.',
-        label: 'تطوير متاجر الويب',
+            'We offer leading Shopify store development solutions, designed to meet market demands and provide a seamless shopping experience. We rely on the latest technologies to ensure your store is fast, secure, and ready for future growth.',
+        label: 'Web Store Development',
     },
     {
         video: '/video/2.mp4',
         description:
-            'تصميم مواقع متميزة لمتاجر Shopify تضفي جاذبية بصرية وسهولة في التصفح. نصمم تجربة مستخدم متكاملة تضمن إبقاء الزوار وتحويلهم إلى عملاء دائمين.',
-        label: 'تصميم المواقع',
+            'Outstanding website designs for Shopify stores that add visual appeal and easy navigation. We craft a complete user experience that keeps visitors engaged and converts them into loyal customers.',
+        label: 'Website Design',
     },
     {
         video: '/video/3.mp4',
         description:
-            'إنشاء هوية بصرية استثنائية تميز متجرك وتجذب الأنظار، مع شعارات وتصاميم تعكس احترافية علامتك التجارية وتزيد من انتشارها.',
-        label: 'العلامة التجارية',
+            'Creating an exceptional visual identity that distinguishes your store and attracts attention — with logos and designs that reflect your brand’s professionalism and increase its recognition.',
+        label: 'Brand Identity',
     },
     {
         video: '/video/4.mp4',
         description:
-            'نواكب التطورات في التجارة الإلكترونية ونبتكر في تصميم متاجر عصرية، مدمجة بأفضل استراتيجيات التحويل والتفاعل، لضمان تحقيق مبيعات أعلى ورضا العملاء.',
-        label: 'الابتكار الرؤيوي',
+            'We stay ahead of e-commerce trends and innovate with modern store designs, integrating the best conversion and engagement strategies to ensure higher sales and customer satisfaction.',
+        label: 'Visionary Innovation',
     },
     {
         video: '/video/5.mp4',
         description:
-            'تأسيس بنية تحتية متقدمة ومتينة لمتجر شوبيفاي الخاص بك، مع تكامل سلس لتطبيقات التحليلات والبيانات وتوفير أداء عالي الجودة لتحسين التجربة الشاملة.',
-        label: 'تصميم الواجهة الخلفية',
+            'Building a robust and advanced infrastructure for your Shopify store with seamless integration of analytics and data apps, providing high-performance for an enhanced overall experience.',
+        label: 'Backend Development',
     },
     {
         video: '/video/6.mp4',
         description:
-            'تأمين متجرك الإلكتروني بأحدث تقنيات الحماية، بما في ذلك بروتوكولات SSL وتشفير البيانات، لضمان حماية بياناتك وبيانات عملائك على مدار الساعة.',
-        label: 'أمن الويب',
+            'Securing your online store using the latest protection technologies, including SSL protocols and data encryption, ensuring round-the-clock safety for your data and your customers’ information.',
+        label: 'Web Security',
     },
 ];
+
 
 const ServicesSection = () => {
     return (

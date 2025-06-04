@@ -1,7 +1,7 @@
 ---
 type: PageLayout
-title: اتصل بنا
-dir: rtl  # ✅ هذا يحدد اتجاه الصفحة ككل إلى اليمين
+title: Contact Us
+dir: ltr  # ✅ Set page direction to left-to-right
 colors: colors-a
 backgroundImage:
   type: BackgroundImage
@@ -10,45 +10,46 @@ backgroundImage:
   backgroundPosition: center
   backgroundRepeat: no-repeat
   opacity: 75
+
 sections:
   - type: ContactSection
-    title: "تواصل معي"
+    title: "Get in Touch"
     colors: colors-f
     backgroundSize: full
     form:
       type: FormBlock
       elementId: form-contact
-      action: "https://formspree.io/f/xrbqvory"   # ✅ رابط Formspree
-      method: POST                                # ✅ لتحديد طريقة الإرسال
+      action: "https://formspree.io/f/xrbqvory"   # ✅ Formspree endpoint
+      method: POST                                # ✅ POST method
       fields:
         - name: firstName
-          label: الاسم الأول
-          placeholder: أدخل اسمك الأول
+          label: First Name
+          placeholder: Enter your first name
           isRequired: true
           width: 1/2
           type: TextFormControl
 
         - name: lastName
-          label: الاسم الأخير
-          placeholder: أدخل اسمك الأخير
+          label: Last Name
+          placeholder: Enter your last name
           isRequired: false
           width: 1/2
           type: TextFormControl
 
         - name: email
-          label: البريد الإلكتروني
+          label: Email
           placeholder: example@email.com
           isRequired: true
           width: full
           type: EmailFormControl
 
         - name: message
-          label: رسالتك
-          placeholder: اكتب رسالتك هنا...
+          label: Your Message
+          placeholder: Write your message here...
           isRequired: true
           width: full
           type: TextareaFormControl
-      submitLabel: "أرسل الآن ✉️"
+      submitLabel: "Send Now ✉️"
       styles:
         self:
           textAlign: center
@@ -60,7 +61,7 @@ sections:
           - pb-16
           - pr-4
           - pl-4
-        textAlign: right
+        textAlign: left
 
   - type: SocialIconsSection
 ---

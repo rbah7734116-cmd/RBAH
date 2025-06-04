@@ -1,6 +1,6 @@
 ---
 type: PageLayout
-title: حول
+title: About
 colors: colors-a
 backgroundImage:
   type: BackgroundImage
@@ -11,20 +11,20 @@ backgroundImage:
   opacity: 75
 sections:
   - type: ImageTextSection
-    name: mohsen abdullah
-    headline: 10 سنوات من الخبرة في تصميم متاجر شوبيفاي التي تحقق نتائج فعلية
+    name: Rabah Albalawy
+    headline: 10 Years of Experience in Designing Shopify Stores That Drive Real Results
     text: >
-      أنا محسن عبدالله، متخصص في تصميم وتطوير متاجر Shopify عالية الأداء منذ أكثر من 10 سنوات.  
-      ساعدت مئات العملاء في بناء متاجر احترافية تحقق مبيعات حقيقية، بفضل فهمي العميق لتجربة المستخدم، وسلوك المشتري، وأهمية التصميم في تحويل الزائر إلى عميل.
+      I’m Rabah Albalawy, a specialist in designing and developing high-performance Shopify stores for over 10 years.  
+      I’ve helped hundreds of clients build professional stores that generate real sales, thanks to my deep understanding of user experience, buyer behavior, and the power of design in turning visitors into customers.
 
-      خلال مسيرتي، أنشأت مئات التصاميم الجاهزة لشوبيفاي، مبنية بكفاءة وكود نظيف، جاهزة للتركيب المباشر دون تعقيد.  
-      لم أكتفِ فقط بالتصميم، بل أنشأت كورس تدريبي شامل انضم إليه أكثر من 25,000 طالب، تعلّموا كيف يطلقون متاجرهم باحتراف.
+      Throughout my career, I’ve created hundreds of pre-built Shopify designs — efficient, clean-coded, and ready to install without hassle.  
+      Beyond just design, I launched a comprehensive training course joined by over 25,000 students, teaching them how to launch their stores professionally.
 
-      إذا كنت تبحث عن متجر لا يكتفي بالمظهر الجذاب، بل يساعدك على بيع أكثر — فأنت في المكان الصحيح.
-    note: ((التصميم ليس مجرد شكل… بل هو استراتيجية مبيعات صامتة، وأنا هنا لأبني لك متجرًا يتحدث نيابة عنك.))
+      If you’re looking for a store that not only looks great but actually helps you sell more — you’re in the right place.
+    note: ((Design is not just about looks… it's a silent sales strategy, and I’m here to build you a store that speaks for you.))
     image:
       src: /images/about.jpg
-      alt: صورة شخصية
+      alt: Personal photo
 
   - type: ServicesSection
 

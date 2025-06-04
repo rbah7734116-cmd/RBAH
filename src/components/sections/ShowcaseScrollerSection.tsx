@@ -30,22 +30,22 @@ export default function ShowcaseScrollerSection() {
                             <div className="iframe-container">
                                 <iframe
                                     srcDoc={`<!DOCTYPE html>
-                                        <html lang='en'>
-                                        <head>
-                                            <meta charset='UTF-8'>
-                                            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-                                            <style>
-                                                body { margin: 0; background: white; color: white; font-family: sans-serif; }
-                                                .scroll-container { display: flex; flex-direction: column; align-items: center; width: 100%; }
-                                                .image { width: 100%; height: auto; }
-                                            </style>
-                                        </head>
-                                        <body>
-                                            <div class='scroll-container'>
-                                                <img class='image' src='${src}' alt='Slide image' />
-                                            </div>
-                                        </body>
-                                        </html>`}
+                                            <html lang='en'>
+                                            <head>
+                                                <meta charset='UTF-8'>
+                                                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                                                <style>
+                                                    body { margin: 0; background: white; color: white; font-family: sans-serif; }
+                                                    .scroll-container { display: flex; flex-direction: column; align-items: center; width: 100%; }
+                                                    .image { width: 100%; height: auto; }
+                                                </style>
+                                            </head>
+                                            <body>
+                                                <div class='scroll-container'>
+                                                    <img class='image' src='${src}' alt='Slide image' />
+                                                </div>
+                                            </body>
+                                            </html>`}
                                     className="w-full h-[600px] border-none"
                                     scrolling="yes"
                                 ></iframe>

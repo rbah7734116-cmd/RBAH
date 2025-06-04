@@ -13,13 +13,19 @@ backgroundImage:
 
 sections:
   - type: FeatureIconsSection
+  - type: TestimonialsSlider
 
   - type: StoreExamplesSection      
   - type: ShowcaseScrollerSection
+  - type: VideoShowcaseSection
+  - type: TestimonialSwiperSection
+
+
   - type: BeforeAfterSection
-  - type: FaqSection
-  - type: OfferSection
   - type: FaqAccordionSection
+
+  
+
 
 
 

@@ -5,32 +5,32 @@
         "type": "Header",
         "headerVariant": "variant-c",
         "isSticky": false,
-        "title": "Personal",
+        "title": "",
         "isTitleVisible": true,
         "primaryLinks": [
             {
                 "type": "Link",
-                "label": "معلومات عنا",
+                "label": "About Us",
                 "url": "/info"
             },
             {
                 "type": "Link",
-                "label": "اتصل بنا",
+                "label": "Contact Us",
                 "url": "/projects"
             },
             {
                 "type": "Link",
-                "label": "كورس التصميم ",
+                "label": "Design Course",
                 "url": "/designs"
             },
             {
                 "type": "Link",
-                "label": "كتاب أكواد",
+                "label": "Codebook",
                 "url": "/Codebook"
             },
             {
                 "type": "Link",
-                "label": "ثيم الاحترافي",
+                "label": "Professional Theme",
                 "url": "/blog"
             }
         ],
@@ -39,14 +39,14 @@
                 "type": "Social",
                 "altText": "Facebook",
                 "label": "Facebook",
-                "url": "https://www.facebook.com/yourpage",
+                "url": "https://www.facebook.com/profile.php?id=61576701425912",
                 "icon": "facebook"
             },
             {
                 "type": "Social",
                 "altText": "YouTube",
                 "label": "YouTube",
-                "url": "https://www.youtube.com/yourchannel",
+                "url": "https://www.youtube.com/",
                 "icon": "youtube"
             }
         ],
@@ -61,7 +61,7 @@
         "primaryLinks": [
             {
                 "type": "Link",
-                "label": "معلومات عنا ",
+                "label": "About Us",
                 "url": "/info",
                 "altText": ""
             },
@@ -86,7 +86,7 @@
         ],
         "contacts": {
             "type": "ContactBlock",
-            "title": "Contact details",
+            "title": "Contact Details",
             "phoneNumber": "850-123-5021",
             "phoneAltText": "My phone number",
             "email": "thisismyemail.@myemail.me",

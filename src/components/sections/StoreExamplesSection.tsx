@@ -18,9 +18,10 @@ export default function StoreExamplesSection() {
     return (
         <section className="bg-[#FFEFD5] py-0 relative">
             <div className="max-w-screen-xl mx-auto px-4 text-center">
-                <h2 className="text-3xl font-bold text-neutral-900 mb-6">
+                <h2 className="text-3xl font-bold text-neutral-900 mb-2 px-4 pt-4">
                     Examples Stores Using ROA 2.0
                 </h2>
+
 
                 <div className="overflow-x-auto">
                     <div className="flex gap-4 pb-4 w-max">
@@ -72,3 +73,10 @@ export default function StoreExamplesSection() {
         </section>
     );
 }
+
+
+
+
+
+
+
