@@ -62,6 +62,7 @@ const components: Record<string, ComponentType<any>> = {
     FaqAccordionSection: dynamic(() => import('./sections/FaqAccordionSection')),
     TestimonialsSlider: dynamic(() => import('./sections/TestimonialsSlider')),
     TestimonialSwiperSection: dynamic(() => import('./sections/TestimonialSwiperSection')),
+    PrivacyPolicy: dynamic(() => import('./sections/PrivacyPolicy')),
 
     VideoShowcaseSection: dynamic(() => import('./sections/VideoShowcaseSection')), // ✅ تم تسجيله هنا
 };

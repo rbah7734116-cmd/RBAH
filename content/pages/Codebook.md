@@ -23,7 +23,7 @@ sections:
 
   - type: BeforeAfterSection
   - type: FaqAccordionSection
-
+  - type: PrivacyPolicy
   
 
 
