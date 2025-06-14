@@ -56,7 +56,7 @@ const DesignsSection: React.FC = () => {
     };
 
     const handleGetCode = () => {
-        window.open("https://www.youtube.com/watch?v=cyKI6nZVGQQ", "_blank");
+        window.open("https://www.youtube.com/@mohsen_abdullah", "_blank");
     };
 
     return (
