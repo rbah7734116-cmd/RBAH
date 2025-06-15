@@ -6,9 +6,17 @@ const nextConfig = {
   trailingSlash: true,
   reactStrictMode: true,
   images: {
-    domains: [
-      'ecomplaybook.co',       // ← سابقًا أضفناه
-      'cdn.shopify.com'        // ← الآن نضيف هذا أيضًا
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'ecomplaybook.co',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.shopify.com',
+        pathname: '/**',
+      },
     ],
   },
 };

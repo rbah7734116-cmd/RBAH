@@ -19,7 +19,7 @@ sections:
     form:
       type: FormBlock
       elementId: form-contact
-      action: "https://formspree.io/f/mkgbbvbn"  # ✅ Formspree endpoint
+      action: "https://formspree.io/f/mkgbbvbn" # ✅ Formspree endpoint
       method: POST                                # ✅ POST method
       fields:
         - name: firstName
@@ -33,7 +33,7 @@ sections:
           label: Last Name
           placeholder: Enter your last name
           isRequired: false
-          width: 1/2
+          width: 1/2    
           type: TextFormControl
 
         - name: email
