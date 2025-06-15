@@ -19,7 +19,7 @@ sections:
     form:
       type: FormBlock
       elementId: form-contact
-      action: "https://formspree.io/f/myzjjdwo"  # ✅ Formspree endpoint
+      action: "https://formspree.io/f/mkgbbvbn"  # ✅ Formspree endpoint
       method: POST                                # ✅ POST method
       fields:
         - name: firstName
