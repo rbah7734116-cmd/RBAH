@@ -8,27 +8,27 @@ import {
 const icons = [
     {
         icon: <FaWhatsapp />,
-        href: 'https://wa.me/905385860324', // رقمك على واتساب
+        href: 'https://wa.me/966509324662',
         bg: 'bg-green-500'
     },
     {
         icon: <FaTelegramPlane />,
-        href: 'https://web.telegram.org/k/#@ksh275',
+        href: 'https://web.telegram.org/k/#@Toptoall',
         bg: 'bg-blue-400'
     },
     {
         icon: <FaYoutube />,
-        href: 'https://www.youtube.com/@mohsen_abdullah',
+        href: 'https://www.youtube.com/',
         bg: 'bg-red-600'
     },
     {
         icon: <FaInstagram />,
-        href: 'https://www.instagram.com/llcarab/',
+        href: 'https://www.instagram.com/futer7788?igsh=ZGUzMzM3NWJiOQ==',
         bg: 'bg-gradient-to-tr from-pink-500 via-red-500 to-yellow-500'
     },
     {
         icon: <FaFacebookF />,
-        href: 'https://www.facebook.com/profile.php?id=100063452304705',
+        href: 'https://www.facebook.com/profile.php?id=61576701425912',
         bg: 'bg-blue-700'
     }
 ];

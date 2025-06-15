@@ -11,10 +11,10 @@ backgroundImage:
   opacity: 75
 sections:
   - type: ImageTextSection
-    name: mohsen abdullah
+    name: Rabah Musayid 
     headline: 10 Years of Experience in Designing Shopify Stores That Drive Real Results
     text: >
-      I’m mohsen abdullah, a specialist in designing and developing high-performance Shopify stores for over 10 years.  
+      I’m Rabah Musayid , a specialist in designing and developing high-performance Shopify stores for over 10 years.  
       I’ve helped hundreds of clients build professional stores that generate real sales, thanks to my deep understanding of user experience, buyer behavior, and the power of design in turning visitors into customers.
 
       Throughout my career, I’ve created hundreds of pre-built Shopify designs — efficient, clean-coded, and ready to install without hassle.  
