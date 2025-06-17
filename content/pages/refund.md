@@ -12,17 +12,8 @@ backgroundImage:
 
 
 sections:
-  - type: FeatureIconsSection
-  - type: TestimonialsSlider
+  - type: refund
 
-  - type: StoreExamplesSection      
-  - type: ShowcaseScrollerSection
-  - type: VideoShowcaseSection
-  - type: TestimonialSwiperSection
-
-
-  - type: BeforeAfterSection
-  - type: FaqAccordionSection
   
 
 

@@ -63,8 +63,12 @@ const components: Record<string, ComponentType<any>> = {
     TestimonialsSlider: dynamic(() => import('./sections/TestimonialsSlider')),
     TestimonialSwiperSection: dynamic(() => import('./sections/TestimonialSwiperSection')),
     PrivacyPolicy: dynamic(() => import('./sections/PrivacyPolicy')),
+    terms: dynamic(() => import('./sections/terms')),
+    refund: dynamic(() => import('./sections/refund')),
 
-    VideoShowcaseSection: dynamic(() => import('./sections/VideoShowcaseSection')), // ✅ تم تسجيله هنا
+
+    VideoShowcaseSection: dynamic(() => import('./sections/VideoShowcaseSection')),
+    privacy: dynamic(() => import('./sections/privacy')), // ✅ تم تسجيله هنا
 };
 
 export const DynamicComponent: React.FC<DynamicComponentProps> = (props) => {

@@ -84,12 +84,12 @@ export default function BeforeAfterSection() {
                     ref={containerRef}
                 >
                     <img
-                        src="https://nurojilt.com/wp-content/uploads/2025/04/Untitled_design_84.webp"
+                        src="/images/555777.webp"
                         alt="Before"
                         className="absolute top-0 left-0 w-full h-full object-cover"
                     />
                     <img
-                        src="https://nurojilt.com/wp-content/uploads/2025/04/Untitled_design_82.webp"
+                        src="/images/555666.webp"
                         alt="After"
                         className="absolute top-0 left-0 w-full h-full object-cover after"
                         ref={afterRef}

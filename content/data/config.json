@@ -68,19 +68,25 @@
             {
                 "type": "Link",
                 "label": "Contact",
-                "url": "mailto:thisismyemail.@myemail.me",
-                "altText": ""
-            },
-            {
-                "type": "Link",
-                "label": "Blog",
-                "url": "/blog",
+                "url": "/projects",
                 "altText": ""
             },
             {
                 "type": "Link",
                 "label": "Privacy Policy",
-                "url": "/PrivacyPolicy",
+                "url": "/privacy",
+                "altText": ""
+            },
+            {
+                "type": "Link",
+                "label": "User Agreement",
+                "url": "/terms",
+                "altText": "Netlify templates"
+            },
+            {
+                "type": "Link",
+                "label": "Refund Policy",
+                "url": "/refund",
                 "altText": "Netlify templates"
             }
         ],
