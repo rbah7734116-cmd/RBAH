@@ -8,7 +8,9 @@ export default function TermsOfService() {
 
             <h2>1. Introduction</h2>
             <p>
-                These Terms of Service ("Terms") govern your access to and use of our website and the digital products offered through it. By purchasing or using any of our products, you agree to be bound by these Terms.
+                <p>
+                    These Terms of Service (&quot;Terms&quot;) govern your access to and use of our website and the digital products offered through it...
+                </p>
             </p>
 
             <h2>2. Digital Product License</h2>
