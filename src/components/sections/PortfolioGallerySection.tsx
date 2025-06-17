@@ -58,12 +58,13 @@ export default function ShopifyStyleProductSection() {
                     <div className="text-black bg-white p-6 rounded-xl shadow-md border" style={{ borderColor: '#DFFFFF' }}>
                         <div className="flex items-center gap-3 mb-4">
                             <div className="flex -space-x-2">
-                                <img src="//roarecipe.store/cdn/shop/files/images_1_100x.jpg" className="w-8 h-8 rounded-full border-2 border-white" />
-                                <img src="//roarecipe.store/cdn/shop/files/images_2_100x.jpg" className="w-8 h-8 rounded-full border-2 border-white" />
-                                <img src="//roarecipe.store/cdn/shop/files/images_100x.jpg" className="w-8 h-8 rounded-full border-2 border-white" />
-                                <img src="//roarecipe.store/cdn/shop/files/images_3_100x.jpg" className="w-8 h-8 rounded-full border-2 border-white" />
-                                <img src="//roarecipe.store/cdn/shop/files/images_4_100x.jpg" className="w-8 h-8 rounded-full border-2 border-white" />
+                                <img src="//roarecipe.store/cdn/shop/files/images_1_100x.jpg" alt="Customer 1" className="w-8 h-8 rounded-full border-2 border-white" />
+                                <img src="//roarecipe.store/cdn/shop/files/images_2_100x.jpg" alt="Customer 2" className="w-8 h-8 rounded-full border-2 border-white" />
+                                <img src="//roarecipe.store/cdn/shop/files/images_100x.jpg" alt="Customer 3" className="w-8 h-8 rounded-full border-2 border-white" />
+                                <img src="//roarecipe.store/cdn/shop/files/images_3_100x.jpg" alt="Customer 4" className="w-8 h-8 rounded-full border-2 border-white" />
+                                <img src="//roarecipe.store/cdn/shop/files/images_4_100x.jpg" alt="Customer 5" className="w-8 h-8 rounded-full border-2 border-white" />
                             </div>
+
                             <p className="text-sm font-semibold">★★★★★ Excellent 4.8</p>
                         </div>
 
