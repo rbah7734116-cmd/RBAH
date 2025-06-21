@@ -91,7 +91,7 @@
             },
             {
                 "type": "Link",
-                "label": "Terms of service",
+                "label": "terms-and-conditions",
                 "url": "/termsofservice",
                 "altText": "Netlify templates"
             }
