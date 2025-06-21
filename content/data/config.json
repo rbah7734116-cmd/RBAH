@@ -91,7 +91,7 @@
             },
             {
                 "type": "Link",
-                "label": "Refund Policy",
+                "label": "Terms of service",
                 "url": "/termsofservice",
                 "altText": "Netlify templates"
             }
