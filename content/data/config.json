@@ -88,6 +88,12 @@
                 "label": "Refund Policy",
                 "url": "/refund",
                 "altText": "Netlify templates"
+            },
+            {
+                "type": "Link",
+                "label": "Refund Policy",
+                "url": "/termsofservice",
+                "altText": "Netlify templates"
             }
         ],
         "contacts": {
