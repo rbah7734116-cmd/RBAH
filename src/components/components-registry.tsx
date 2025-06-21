@@ -65,6 +65,7 @@ const components: Record<string, ComponentType<any>> = {
     PrivacyPolicy: dynamic(() => import('./sections/PrivacyPolicy')),
     terms: dynamic(() => import('./sections/terms')),
     refund: dynamic(() => import('./sections/refund')),
+    Termsofservice: dynamic(() => import('./sections/Termsofservice')),
 
 
     VideoShowcaseSection: dynamic(() => import('./sections/VideoShowcaseSection')),
