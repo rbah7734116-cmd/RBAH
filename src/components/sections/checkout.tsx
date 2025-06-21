@@ -87,14 +87,14 @@ export default function CheckoutSection() {
                         <div className="bg-[#2a2a2a] px-4 py-2 rounded-md border border-gray-600">Cash App Pay</div>
                         <div className="bg-[#2a2a2a] px-4 py-2 rounded-md border border-gray-600">Google Pay</div>
                     </div>
-
-                    {/* PayPal Selected */}
+                    {/* Secure Card Payment Notice */}
                     <div className="bg-[#2a2a2a] p-4 rounded-md border border-blue-500 text-sm mb-4">
-                        <p className="font-semibold mb-1">PayPal selected.</p>
+                        <p className="font-semibold mb-1">Secure Card Payment</p>
                         <p className="text-gray-400 text-xs">
-                            After submitting your order, you'll be redirected to PayPal to complete your payment.
+                            After submitting your order, your payment will be processed securely via credit or debit card. Instant access will be provided after purchase.
                         </p>
                     </div>
+
 
                     {/* Terms */}
                     <div className="flex items-center gap-2 mb-4 text-sm">
@@ -107,14 +107,15 @@ export default function CheckoutSection() {
                         onClick={handleCheckout}
                         className="bg-[#0070ba] hover:bg-[#005c9c] text-white font-semibold py-3 rounded-md w-full"
                     >
-                        PayPal Buy Now
+                        Buy Now
                     </button>
 
                     {/* Footer */}
                     <p className="text-center text-xs text-gray-500 mt-4">Secured by <strong>Whop</strong></p>
                     <p className="text-center text-xs text-gray-500 mt-2">
-                        By joining, you agree to Get The Girlies Richer's and Whop’s terms and conditions and allow them to charge your card.
+                        By joining, you agree to Get The Girlies Richer&apos;s and Whop&apos;s terms and conditions and allow them to charge your card.
                     </p>
+
 
                 </div>
             </div>
