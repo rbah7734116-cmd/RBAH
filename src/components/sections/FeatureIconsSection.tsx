@@ -1,15 +1,17 @@
+'use client'; // ⬅️ مهم جدًا، لازم يكون أول سطر
+
 import Image from 'next/image';
+import { useRouter } from 'next/navigation'; // ⬅️ الآن ممكن تضيفه بدون مشاكل
 import { useEffect, useState } from 'react';
 
-// نفس بيانات الأيقونات...
 const features = [/* ... */];
 
 const FeatureIconsSection = () => {
     const [timeLeft, setTimeLeft] = useState('');
+    const router = useRouter(); // ⬅️ تستخدمه عادي
 
-    // احسب كم تبقى حتى 48 ساعة بعد أول تحميل
     useEffect(() => {
-        const offerDeadline = new Date().getTime() + 48 * 60 * 60 * 1000; // 48 ساعة من الآن
+        const offerDeadline = new Date().getTime() + 48 * 60 * 60 * 1000;
 
         const updateCountdown = () => {
             const now = new Date().getTime();
@@ -27,17 +29,14 @@ const FeatureIconsSection = () => {
             setTimeLeft(`${hours}h : ${minutes}m : ${seconds}s`);
         };
 
-        updateCountdown(); // لتحديث أولي سريع
+        updateCountdown();
         const interval = setInterval(updateCountdown, 1000);
-
         return () => clearInterval(interval);
     }, []);
 
     return (
         <section className="pt-0 pb-0 bg-[#FFEFD5]">
             <div className="max-w-6xl mx-auto mt-0 grid grid-cols-1 md:grid-cols-2 bg-[#FFEFD5] rounded-xl overflow-hidden">
-
-                {/* ✅ الصورة */}
                 <div className="w-full">
                     <Image
                         src="/1/b14.png"
@@ -48,15 +47,11 @@ const FeatureIconsSection = () => {
                     />
                 </div>
 
-                {/* ✅ النصوص */}
-                {/* ✅ النصوص */}
                 <div className="w-full p-6 flex flex-col justify-center">
                     <p className="text-[13px] text-gray-800 font-medium leading-snug mb-2">
                         58 Premium Shopify Snippets — Built for Speed, Design & Conversions
                     </p>
 
-
-                    {/* ✅ الأيقونات */}
                     <div className="flex flex-wrap justify-between items-center gap-y-4 w-full mb-6">
                         {features.map((feature, index) => (
                             <div key={index} className="flex flex-col items-center text-center w-1/4 min-w-[80px]">
@@ -88,7 +83,10 @@ const FeatureIconsSection = () => {
                         <li>✅ Increases your Conversion rate and Sales!</li>
                     </ul>
 
-                    <button className="mt-6 w-full bg-[#1a1a1a] hover:bg-black text-white py-3 rounded-lg font-bold text-lg transition-transform duration-200 hover:scale-105">
+                    <button
+                        onClick={() => router.push('/checkout')}
+                        className="mt-6 w-full bg-[#1a1a1a] hover:bg-black text-white py-3 rounded-lg font-bold text-lg transition-transform duration-200 hover:scale-105"
+                    >
                         Buy Now →
                     </button>
 
@@ -96,7 +94,6 @@ const FeatureIconsSection = () => {
                         🔐 100% Safe & Secure Checkout — Instant Access
                     </p>
 
-                    {/* ✅ مؤقت ديناميكي */}
                     <p className="text-xs text-red-500 mt-1 text-center font-semibold">
                         ⚡ Offer ends in {timeLeft}
                     </p>
