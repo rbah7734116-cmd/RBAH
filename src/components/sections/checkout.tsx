@@ -1,5 +1,19 @@
 "use client";
 
+
+
+declare global {
+    interface Window {
+        Paddle: {
+            Setup: (options: { vendor: number }) => void;
+            Checkout: {
+                open: (options: { product: number; successCallback: () => void }) => void;
+            };
+        };
+    }
+}
+
+
 import { useEffect, useState } from "react";
 
 export default function CheckoutSection() {
