@@ -12,7 +12,7 @@ backgroundImage:
 
 
 sections:
-  - type: Termsofservice
+  - type: terms-and-conditions
 
   
 
