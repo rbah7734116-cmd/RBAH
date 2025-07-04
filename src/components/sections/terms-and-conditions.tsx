@@ -3,13 +3,13 @@ export default function TermsOfService() {
         <main style={{ maxWidth: '850px', margin: '0 auto', padding: '40px 24px', fontFamily: 'Segoe UI, sans-serif', lineHeight: '1.8' }}>
             <h1 style={{ fontSize: '2rem', fontWeight: 'bold' }}>Terms of Service</h1>
             <p>Effective Date: June 2025</p>
-
             <h2>1. Introduction</h2>
             <p>
-                These Terms of Service ("Terms") govern your access to and use of our website and the digital products offered through it.
+                These Terms of Service (&quot;Terms&quot;) govern your access to and use of our website and the digital products offered through it.
                 This website is operated by <strong>Rabah Musayid LLC</strong>, a legally registered business entity.
                 By accessing or using our services, you agree to be bound by these Terms.
             </p>
+
 
             <h2>2. Digital Product License</h2>
             <p>
