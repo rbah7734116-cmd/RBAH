@@ -84,7 +84,7 @@ const FeatureIconsSection = () => {
                     </ul>
 
                     <button
-                        onClick={() => router.push('/checkout')}
+                        onClick={() => window.open('https://pay.paddle.io/hsc_01k0rsv33pkzqx92ae46zqc5ch_vb77jm8yak205zy42k7sm7x732p4dj43', '_blank')}
                         className="mt-6 w-full bg-[#1a1a1a] hover:bg-black text-white py-3 rounded-lg font-bold text-lg transition-transform duration-200 hover:scale-105"
                     >
                         Buy Now →
