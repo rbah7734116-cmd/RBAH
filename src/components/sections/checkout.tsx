@@ -1,4 +1,5 @@
-import { useEffect } from 'react';
+// src/components/sections/checkout.tsx
+import { useEffect } from "react";
 
 declare global {
     interface Window {
@@ -6,62 +7,49 @@ declare global {
     }
 }
 
-const CHECKOUT_PRODUCT_ID = 123456; // استبدل هذا برقم المنتج الخاص بك من Paddle
-const VENDOR_ID = 236739; // رقم Vendor ID الخاص بك
-
-const Checkout = () => {
+const CheckoutSection = () => {
     useEffect(() => {
-        // تحميل سكريبت Paddle
-        const paddleScriptId = 'paddle-js-sdk';
-        if (!document.getElementById(paddleScriptId)) {
-            const script = document.createElement('script');
-            script.id = paddleScriptId;
-            script.src = 'https://cdn.paddle.com/paddle/paddle.js';
-            script.async = true;
-            script.onload = () => {
-                // إعداد Vendor ID عند تحميل السكريبت
-                window.Paddle.Setup({ vendor: VENDOR_ID });
-            };
-            document.body.appendChild(script);
-        } else {
-            // لو السكريبت محمل مسبقاً، أعد الإعداد فقط
-            window.Paddle?.Setup({ vendor: VENDOR_ID });
-        }
+        const script = document.createElement("script");
+        script.src = "https://cdn.paddle.com/paddle/v2/paddle.js";
+        script.async = true;
+        document.body.appendChild(script);
+
+        script.onload = () => {
+            if (window.Paddle) {
+                window.Paddle.Environment.set("sandbox"); // احذف في الإنتاج
+                window.Paddle.Setup({ seller: 236739 });
+            }
+        };
     }, []);
 
-    const handleCheckout = () => {
-        if (!window.Paddle) {
-            alert('Paddle script is not loaded yet, please try again later.');
-            return;
+    const openCheckout = () => {
+        if (window.Paddle) {
+            window.Paddle.Checkout.open({
+                items: [
+                    {
+                        priceId: "pri_01k0ff21mn9p4nmsx16sw5afze",
+                    },
+                ],
+                checkout: {
+                    settings: {
+                        displayMode: "inline",
+                        frameTarget: "checkout-container",
+                        theme: "light",
+                    },
+                },
+            });
         }
-
-        window.Paddle.Checkout.open({
-            product: CHECKOUT_PRODUCT_ID,
-            successCallback: () => {
-                alert('تم الدفع بنجاح! شكراً لك.');
-            },
-            closeCallback: () => {
-                alert('تم إغلاق نافذة الدفع.');
-            },
-        });
     };
 
     return (
-        <section>
-            <h2>صفحة الدفع</h2>
-            <button onClick={handleCheckout} style={{
-                padding: '12px 24px',
-                fontSize: '18px',
-                backgroundColor: '#0051ff',
-                color: '#fff',
-                border: 'none',
-                borderRadius: '6px',
-                cursor: 'pointer'
-            }}>
-                اشتري الآن
+        <div>
+            <h2>الدفع الآمن</h2>
+            <button onClick={openCheckout} className="bg-blue-600 text-white px-4 py-2 rounded">
+                ادفع الآن $27
             </button>
-        </section>
+            <div id="checkout-container" className="mt-6" />
+        </div>
     );
 };
 
-export default Checkout;
+export default CheckoutSection;
