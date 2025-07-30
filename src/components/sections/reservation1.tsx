@@ -21,13 +21,14 @@ export default function Reservation1() {
     });
 
     const [showPayment, setShowPayment] = useState(false);
+    const [agreed, setAgreed] = useState(false);
 
     useEffect(() => {
         const script = document.createElement("script");
         script.src = "https://cdn.paddle.com/paddle/v2/paddle.js";
         script.onload = () => {
             window.Paddle.Setup({
-                token: "live_ebb713e9b483c666ec833d9e544", // ✅ Client-side token
+                token: "live_ebb713e9b483c666ec833d9e544",
                 environment: "production",
             });
         };
@@ -48,10 +49,11 @@ export default function Reservation1() {
     };
 
     const handleCheckout = () => {
+        if (!agreed) return;
         window.Paddle.Checkout.open({
             items: [
                 {
-                    priceId: "pri_01k0ff21mn9p4nmsx16sw5afze", // ✅ Price ID
+                    priceId: "pri_01k0ff21mn9p4nmsx16sw5afze",
                 },
             ],
         });
@@ -131,9 +133,29 @@ export default function Reservation1() {
             </form>
 
             {showPayment && (
-                <div className="mt-8 text-center">
-                    <p className="mb-4 text-gray-700">الآن يمكنك إتمام الدفع:</p>
-                    <Button onClick={handleCheckout} className="bg-black hover:bg-gray-800 w-full">
+                <div className="mt-8 text-center space-y-4">
+                    <p className="text-gray-700">
+                        الآن يمكنك إتمام الدفع.
+                        <br />
+                        سنتصل بك في الوقت المحدد، وبإتمام الدفع فإنك توافق على تلقي الاتصال وأيضًا على <a href="/privacy" className="underline text-blue-600" target="_blank">سياسة الخصوصية</a> الخاصة بنا.
+                    </p>
+
+                    <div className="flex items-center justify-center space-x-2 rtl:space-x-reverse text-sm">
+                        <input
+                            type="checkbox"
+                            id="agree"
+                            checked={agreed}
+                            onChange={() => setAgreed(!agreed)}
+                            className="w-4 h-4"
+                        />
+                        <label htmlFor="agree">أوافق على سياسة الخصوصية وتلقي الاتصال</label>
+                    </div>
+
+                    <Button
+                        onClick={handleCheckout}
+                        className="bg-black hover:bg-gray-800 w-full"
+                        disabled={!agreed}
+                    >
                         إتمام الدفع
                     </Button>
                 </div>
