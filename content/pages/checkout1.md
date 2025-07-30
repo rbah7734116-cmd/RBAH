@@ -12,7 +12,7 @@ backgroundImage:
 
 
 sections:
-  - type: terms-and-conditions
+  - type: checkout
 
   
 
