@@ -3,7 +3,13 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+declare global {
+    interface Window {
+        Paddle: any;
+    }
+}
 
 export default function Reservation1() {
     const [formData, setFormData] = useState({
@@ -13,6 +19,20 @@ export default function Reservation1() {
         date: "",
         time: "",
     });
+
+    const [showPayment, setShowPayment] = useState(false);
+
+    useEffect(() => {
+        const script = document.createElement("script");
+        script.src = "https://cdn.paddle.com/paddle/v2/paddle.js";
+        script.onload = () => {
+            window.Paddle.Setup({
+                token: "live_ebb713e9b483c666ec833d9e544", // ✅ Client-side token
+                environment: "production",
+            });
+        };
+        document.body.appendChild(script);
+    }, []);
 
     const handleInputChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -24,7 +44,17 @@ export default function Reservation1() {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         console.log("تم إرسال البيانات:", formData);
-        // يمكنك هنا إرسال البيانات إلى خادم أو تخزينها
+        setShowPayment(true);
+    };
+
+    const handleCheckout = () => {
+        window.Paddle.Checkout.open({
+            items: [
+                {
+                    priceId: "pri_01k0ff21mn9p4nmsx16sw5afze", // ✅ Price ID
+                },
+            ],
+        });
     };
 
     return (
@@ -99,6 +129,15 @@ export default function Reservation1() {
                     تأكيد الحجز
                 </Button>
             </form>
+
+            {showPayment && (
+                <div className="mt-8 text-center">
+                    <p className="mb-4 text-gray-700">الآن يمكنك إتمام الدفع:</p>
+                    <Button onClick={handleCheckout} className="bg-black hover:bg-gray-800 w-full">
+                        إتمام الدفع
+                    </Button>
+                </div>
+            )}
         </div>
     );
 }

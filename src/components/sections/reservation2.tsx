@@ -1,109 +1,127 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Calendar } from "@/components/ui/calendar";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+declare global {
+    interface Window {
+        Paddle: any;
+    }
+}
 
 export default function Reservation2() {
-    const [showPayment, setShowPayment] = useState(false);
     const [formData, setFormData] = useState({
         name: "",
-        email: "",
-        whatsapp: "",
-        date: new Date(),
+        phone: "",
+        date: "",
         time: "",
     });
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const [showPayment, setShowPayment] = useState(false);
+
+    useEffect(() => {
+        const script = document.createElement("script");
+        script.src = "https://cdn.paddle.com/paddle/v2/paddle.js";
+        script.onload = () => {
+            window.Paddle.Setup({
+                token: "live_ebb713e9b483c666ec833d9e544",
+                environment: "production",
+            });
+        };
+        document.body.appendChild(script);
+    }, []);
+
+    const handleInputChange = (
+        e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+    ) => {
         const { name, value } = e.target;
         setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
+        console.log("تم إرسال البيانات:", formData);
         setShowPayment(true);
     };
 
-    return (
-        <div className="max-w-xl mx-auto p-6 bg-gray-50 text-gray-800 rounded-xl shadow-md space-y-4">
-            <h2 className="text-2xl font-bold text-center mb-4">الباقة الثانية — حجز موعد</h2>
+    const handleCheckout = () => {
+        window.Paddle.Checkout.open({
+            items: [
+                {
+                    priceId: "pri_01k0ff21mn9p4nmsx16sw5afze",
+                },
+            ],
+        });
+    };
 
-            <form onSubmit={handleSubmit} className="space-y-4">
+    return (
+        <div className="bg-white text-black p-6 rounded-xl shadow-lg max-w-lg mx-auto mt-12 border border-gray-200">
+            <h2 className="text-2xl font-bold mb-6 text-center">احجز الآن</h2>
+            <form onSubmit={handleSubmit} className="space-y-5">
+
                 <div>
-                    <Label htmlFor="name" className="text-gray-700">الاسم الكامل</Label>
+                    <Label htmlFor="name">الاسم</Label>
                     <Input
                         id="name"
                         name="name"
+                        type="text"
+                        placeholder="اسمك الكامل"
                         value={formData.name}
                         onChange={handleInputChange}
                         required
-                        className="bg-white border-gray-300 text-gray-800"
                     />
                 </div>
 
                 <div>
-                    <Label htmlFor="email" className="text-gray-700">البريد الإلكتروني</Label>
+                    <Label htmlFor="phone">رقم الهاتف</Label>
                     <Input
-                        id="email"
-                        type="email"
-                        name="email"
-                        value={formData.email}
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        placeholder="رقم الجوال"
+                        value={formData.phone}
                         onChange={handleInputChange}
                         required
-                        className="bg-white border-gray-300 text-gray-800"
                     />
                 </div>
 
                 <div>
-                    <Label htmlFor="whatsapp" className="text-gray-700">رقم الواتساب</Label>
+                    <Label htmlFor="date">التاريخ</Label>
                     <Input
-                        id="whatsapp"
-                        name="whatsapp"
-                        value={formData.whatsapp}
+                        id="date"
+                        name="date"
+                        type="date"
+                        value={formData.date}
                         onChange={handleInputChange}
                         required
-                        className="bg-white border-gray-300 text-gray-800"
                     />
                 </div>
 
                 <div>
-                    <Label htmlFor="date" className="text-gray-700">التاريخ المناسب</Label>
-                    <Calendar
-                        mode="single"
-                        selected={formData.date}
-                        onSelect={(date) =>
-                            setFormData((prev) => ({
-                                ...prev,
-                                date: date || new Date(),
-                            }))
-                        }
-                        className="rounded-md border border-gray-300 bg-white text-gray-800"
-                    />
-                </div>
-
-                <div>
-                    <Label htmlFor="time" className="text-gray-700">الوقت المناسب</Label>
-                    <input
-                        type="time"
+                    <Label htmlFor="time">الوقت</Label>
+                    <Input
                         id="time"
                         name="time"
+                        type="time"
                         value={formData.time}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-3 py-2 border border-gray-300 rounded bg-white text-gray-800"
                     />
                 </div>
 
-                <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold">
-                    استمرار إلى الدفع
+                <Button type="submit" className="w-full">
+                    تأكيد الحجز
                 </Button>
             </form>
 
             {showPayment && (
-                <div className="mt-4 text-center text-green-600 font-medium">
-                    زر الدفع سيظهر هنا بعد تعبئة البيانات.
+                <div className="mt-8 text-center">
+                    <p className="mb-4 text-gray-700">الآن يمكنك إتمام الدفع:</p>
+                    <Button onClick={handleCheckout} className="bg-black hover:bg-gray-800 w-full">
+                        إتمام الدفع
+                    </Button>
                 </div>
             )}
         </div>
