@@ -12,4 +12,11 @@ backgroundImage:
 
 
 sections:
-  - type: checkout
+  - type: terms-and-conditions
+
+  
+
+
+
+
+---
