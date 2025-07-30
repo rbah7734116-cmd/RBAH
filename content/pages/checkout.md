@@ -13,6 +13,7 @@ backgroundImage:
 
 sections:
   - type: checkout1
+  - type: Offersservices
 
   
 

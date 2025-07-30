@@ -68,6 +68,7 @@ const components: Record<string, ComponentType<any>> = {
     'terms-and-conditions': dynamic(() => import('./sections/terms-and-conditions')),
     checkout: dynamic(() => import('./sections/checkout')),
     checkout1: dynamic(() => import('./sections/checkout1')),
+    Offersservices: dynamic(() => import('./sections/Offersservices')),
 
 
 
