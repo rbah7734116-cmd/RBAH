@@ -1,4 +1,4 @@
-// src/components/sections/reservation2.tsx
+"use client";
 
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
@@ -18,28 +18,17 @@ export default function Reservation2() {
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
-        setFormData(prev => ({ ...prev, [name]: value }));
-    };
-
-    const handleDateChange = (date: Date) => {
-        setFormData(prev => ({ ...prev, date }));
+        setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-
-        if (!formData.name || !formData.email || !formData.whatsapp || !formData.time) {
-            alert("يرجى تعبئة جميع الحقول المطلوبة.");
-            return;
-        }
-
         setShowPayment(true);
     };
 
     return (
-        <div className="max-w-xl mx-auto p-6 bg-white rounded-xl shadow-md space-y-6">
-            <h2 className="text-2xl font-bold text-center">الباقة الثالثة — حجز موعد</h2>
-
+        <div className="max-w-xl mx-auto p-6 bg-white rounded-xl shadow-md space-y-4">
+            <h2 className="text-2xl font-bold text-center mb-4">الباقة الثانية — حجز موعد</h2>
             <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                     <Label htmlFor="name">الاسم الكامل</Label>
@@ -48,7 +37,6 @@ export default function Reservation2() {
                         name="name"
                         value={formData.name}
                         onChange={handleInputChange}
-                        placeholder="أدخل الاسم الكامل"
                         required
                     />
                 </div>
@@ -61,7 +49,6 @@ export default function Reservation2() {
                         name="email"
                         value={formData.email}
                         onChange={handleInputChange}
-                        placeholder="example@mail.com"
                         required
                     />
                 </div>
@@ -73,14 +60,23 @@ export default function Reservation2() {
                         name="whatsapp"
                         value={formData.whatsapp}
                         onChange={handleInputChange}
-                        placeholder="مثال: 009665xxxxxxxx"
                         required
                     />
                 </div>
 
                 <div>
                     <Label htmlFor="date">التاريخ المناسب</Label>
-                    <Calendar selectedDate={formData.date} onDateChange={handleDateChange} />
+                    <Calendar
+                        mode="single"
+                        selected={formData.date}
+                        onSelect={(date) =>
+                            setFormData((prev) => ({
+                                ...prev,
+                                date: date || new Date(),
+                            }))
+                        }
+                        className="rounded-md border"
+                    />
                 </div>
 
                 <div>
@@ -92,7 +88,7 @@ export default function Reservation2() {
                         value={formData.time}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                        className="w-full px-3 py-2 border rounded"
                     />
                 </div>
 
@@ -102,9 +98,9 @@ export default function Reservation2() {
             </form>
 
             {showPayment && (
-                <div className="mt-6 p-4 bg-green-50 border border-green-400 rounded-md text-green-700 text-center">
-                    {/* هنا زر الدفع مع Paddle */}
-                    <p>تم تعبئة النموذج بنجاح، زر الدفع سيظهر هنا.</p>
+                <div className="mt-4">
+                    {/* زر الدفع يأتي هنا */}
+                    <p className="text-center">زر الدفع سيظهر هنا بعد تعبئة البيانات.</p>
                 </div>
             )}
         </div>
