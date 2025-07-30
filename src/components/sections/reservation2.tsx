@@ -52,7 +52,7 @@ export default function Reservation2() {
         window.Paddle.Checkout.open({
             items: [
                 {
-                    priceId: "pri_01k0ff21mn9p4nmsx16sw5afze",
+                    priceId: "pri_01k1dv90qzqy50aty4v0tj0bv3",
                 },
             ],
         });
