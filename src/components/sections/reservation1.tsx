@@ -3,7 +3,6 @@
 import { Calendar } from '@/components/ui/calendar';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import Link from 'next/link';
 import { useState } from 'react';
 
 declare global {
@@ -64,7 +63,7 @@ export default function Reservation1() {
 
     return (
         <section className="max-w-xl mx-auto p-6 bg-white rounded-lg shadow-md mt-10">
-            <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">حجز موعد</h2>
+            <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">حجز موعد 1</h2>
 
             {!submitted ? (
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -109,15 +108,13 @@ export default function Reservation1() {
                     <p className="mb-4 text-gray-700">
                         تم تسجيل الحجز بنجاح، الآن يمكنك إتمام الدفع.
                     </p>
-
                     <div className="bg-gray-100 p-4 rounded mb-4 text-sm text-gray-600 text-right leading-relaxed">
-                        سيتم التواصل معك في الوقت المحدد لتأكيد الموعد.
+                        سنقوم بالاتصال بك في الوقت المحدد لتأكيد الموعد.
                         <br />
-                        بالضغط على <span className="font-semibold">"اشترِ الآن"</span>، فإنك توافق على تلقي الاتصال من فريقنا،
-                        وتقر بأنك قرأت ووافقت على{' '}
-                        <Link href="/terms" className="underline text-blue-600">
+                        بالضغط على &quot;اشترِ الآن&quot;، فإنك توافق على تلقي الاتصال من فريقنا، وتؤكد أنك قرأت ووافقت على{' '}
+                        <a href="/terms" className="underline text-blue-600">
                             الشروط والسياسات
-                        </Link>
+                        </a>
                         .
                     </div>
 
@@ -127,7 +124,6 @@ export default function Reservation1() {
                             id="accept"
                             checked={policyAccepted}
                             onChange={(e) => setPolicyAccepted(e.target.checked)}
-                            className="w-4 h-4"
                         />
                         <label htmlFor="accept" className="text-sm text-gray-700">
                             أوافق على الشروط والسياسات
