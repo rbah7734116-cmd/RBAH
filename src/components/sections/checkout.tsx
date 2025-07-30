@@ -9,11 +9,10 @@ declare global {
 export default function CheckoutSection() {
     useEffect(() => {
         const script = document.createElement('script');
-        script.src = 'https://cdn.paddle.com/paddle/v2/paddle.js'; // ✅ v2 script
+        script.src = 'https://cdn.paddle.com/paddle/paddle.js';
         script.onload = () => {
             window.Paddle.Setup({
-                token: 'live_ebb713e9b483c666ec833d9e544', // ✅ Client-side token
-                environment: 'production', // أو 'sandbox' لو كنت تختبر
+                vendor: 236739, // ✅ Vendor ID
             });
         };
         document.body.appendChild(script);
@@ -23,7 +22,7 @@ export default function CheckoutSection() {
         window.Paddle.Checkout.open({
             items: [
                 {
-                    priceId: 'pri_01k0ff21mn9p4nmsx16sw5afze', // ✅ Price ID
+                    priceId: 'pro_01k0ferfj24g7dzv7t5f1rp8h4', // ✅ Product ID
                 },
             ],
         });
