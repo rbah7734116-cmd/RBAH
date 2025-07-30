@@ -63,7 +63,7 @@ export default function Reservation1() {
 
     return (
         <section className="max-w-xl mx-auto p-6 bg-white rounded-lg shadow-md mt-10">
-            <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">حجز موعد 1</h2>
+            <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">حجز موعد</h2>
 
             {!submitted ? (
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -111,7 +111,7 @@ export default function Reservation1() {
                     <div className="bg-gray-100 p-4 rounded mb-4 text-sm text-gray-600 text-right leading-relaxed">
                         سنقوم بالاتصال بك في الوقت المحدد لتأكيد الموعد.
                         <br />
-                        بالضغط على &quot;اشترِ الآن&quot;، فإنك توافق على تلقي الاتصال من فريقنا، وتؤكد أنك قرأت ووافقت على{' '}
+                        بالضغط على "اشترِ الآن"، فإنك توافق على تلقي الاتصال من فريقنا، وتؤكد أنك قرأت ووافقت على{' '}
                         <a href="/terms" className="underline text-blue-600">
                             الشروط والسياسات
                         </a>
