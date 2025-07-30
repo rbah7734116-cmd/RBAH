@@ -1,40 +1,44 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Calendar } from "@/components/ui/calendar";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
 
 export default function Reservation1() {
-    const [showPayment, setShowPayment] = useState(false);
     const [formData, setFormData] = useState({
         name: "",
         email: "",
-        whatsapp: "",
-        date: new Date(),
+        phone: "",
+        date: "",
         time: "",
     });
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleInputChange = (
+        e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+    ) => {
         const { name, value } = e.target;
         setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        setShowPayment(true);
+        console.log("تم إرسال البيانات:", formData);
+        // يمكنك هنا إرسال البيانات إلى خادم أو تخزينها
     };
 
     return (
-        <div className="max-w-xl mx-auto p-6 bg-white rounded-xl shadow-md space-y-4">
-            <h2 className="text-2xl font-bold text-center mb-4">الباقة الثانية — حجز موعد</h2>
-            <form onSubmit={handleSubmit} className="space-y-4">
+        <div className="bg-white text-black p-6 rounded-xl shadow-lg max-w-lg mx-auto mt-12 border border-gray-200">
+            <h2 className="text-2xl font-bold mb-6 text-center">حجز موعد</h2>
+            <form onSubmit={handleSubmit} className="space-y-5">
+
                 <div>
                     <Label htmlFor="name">الاسم الكامل</Label>
                     <Input
                         id="name"
                         name="name"
+                        type="text"
+                        placeholder="أدخل اسمك"
                         value={formData.name}
                         onChange={handleInputChange}
                         required
@@ -45,8 +49,9 @@ export default function Reservation1() {
                     <Label htmlFor="email">البريد الإلكتروني</Label>
                     <Input
                         id="email"
-                        type="email"
                         name="email"
+                        type="email"
+                        placeholder="example@email.com"
                         value={formData.email}
                         onChange={handleInputChange}
                         required
@@ -54,55 +59,46 @@ export default function Reservation1() {
                 </div>
 
                 <div>
-                    <Label htmlFor="whatsapp">رقم الواتساب</Label>
+                    <Label htmlFor="phone">رقم الهاتف</Label>
                     <Input
-                        id="whatsapp"
-                        name="whatsapp"
-                        value={formData.whatsapp}
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        placeholder="05XXXXXXXX"
+                        value={formData.phone}
                         onChange={handleInputChange}
                         required
                     />
                 </div>
 
                 <div>
-                    <Label htmlFor="date">التاريخ المناسب</Label>
-                    <Calendar
-                        mode="single"
-                        selected={formData.date}
-                        onSelect={(date) =>
-                            setFormData((prev) => ({
-                                ...prev,
-                                date: date || new Date(),
-                            }))
-                        }
-                        className="rounded-md border"
+                    <Label htmlFor="date">اختر التاريخ</Label>
+                    <Input
+                        id="date"
+                        name="date"
+                        type="date"
+                        value={formData.date}
+                        onChange={handleInputChange}
+                        required
                     />
                 </div>
 
                 <div>
-                    <Label htmlFor="time">الوقت المناسب</Label>
-                    <input
-                        type="time"
+                    <Label htmlFor="time">اختر الوقت</Label>
+                    <Input
                         id="time"
                         name="time"
+                        type="time"
                         value={formData.time}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-3 py-2 border rounded"
                     />
                 </div>
 
                 <Button type="submit" className="w-full">
-                    استمرار إلى الدفع
+                    تأكيد الحجز
                 </Button>
             </form>
-
-            {showPayment && (
-                <div className="mt-4">
-                    {/* زر الدفع الخاص بـ Paddle يأتي هنا */}
-                    <p className="text-center">زر الدفع سيظهر هنا بعد تعبئة البيانات.</p>
-                </div>
-            )}
         </div>
     );
 }

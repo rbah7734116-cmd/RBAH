@@ -27,22 +27,24 @@ export default function Reservation2() {
     };
 
     return (
-        <div className="max-w-xl mx-auto p-6 bg-white rounded-xl shadow-md space-y-4">
+        <div className="max-w-xl mx-auto p-6 bg-gray-50 text-gray-800 rounded-xl shadow-md space-y-4">
             <h2 className="text-2xl font-bold text-center mb-4">الباقة الثانية — حجز موعد</h2>
+
             <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                    <Label htmlFor="name">الاسم الكامل</Label>
+                    <Label htmlFor="name" className="text-gray-700">الاسم الكامل</Label>
                     <Input
                         id="name"
                         name="name"
                         value={formData.name}
                         onChange={handleInputChange}
                         required
+                        className="bg-white border-gray-300 text-gray-800"
                     />
                 </div>
 
                 <div>
-                    <Label htmlFor="email">البريد الإلكتروني</Label>
+                    <Label htmlFor="email" className="text-gray-700">البريد الإلكتروني</Label>
                     <Input
                         id="email"
                         type="email"
@@ -50,22 +52,24 @@ export default function Reservation2() {
                         value={formData.email}
                         onChange={handleInputChange}
                         required
+                        className="bg-white border-gray-300 text-gray-800"
                     />
                 </div>
 
                 <div>
-                    <Label htmlFor="whatsapp">رقم الواتساب</Label>
+                    <Label htmlFor="whatsapp" className="text-gray-700">رقم الواتساب</Label>
                     <Input
                         id="whatsapp"
                         name="whatsapp"
                         value={formData.whatsapp}
                         onChange={handleInputChange}
                         required
+                        className="bg-white border-gray-300 text-gray-800"
                     />
                 </div>
 
                 <div>
-                    <Label htmlFor="date">التاريخ المناسب</Label>
+                    <Label htmlFor="date" className="text-gray-700">التاريخ المناسب</Label>
                     <Calendar
                         mode="single"
                         selected={formData.date}
@@ -75,12 +79,12 @@ export default function Reservation2() {
                                 date: date || new Date(),
                             }))
                         }
-                        className="rounded-md border"
+                        className="rounded-md border border-gray-300 bg-white text-gray-800"
                     />
                 </div>
 
                 <div>
-                    <Label htmlFor="time">الوقت المناسب</Label>
+                    <Label htmlFor="time" className="text-gray-700">الوقت المناسب</Label>
                     <input
                         type="time"
                         id="time"
@@ -88,19 +92,18 @@ export default function Reservation2() {
                         value={formData.time}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-3 py-2 border rounded"
+                        className="w-full px-3 py-2 border border-gray-300 rounded bg-white text-gray-800"
                     />
                 </div>
 
-                <Button type="submit" className="w-full">
+                <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold">
                     استمرار إلى الدفع
                 </Button>
             </form>
 
             {showPayment && (
-                <div className="mt-4">
-                    {/* زر الدفع يأتي هنا */}
-                    <p className="text-center">زر الدفع سيظهر هنا بعد تعبئة البيانات.</p>
+                <div className="mt-4 text-center text-green-600 font-medium">
+                    زر الدفع سيظهر هنا بعد تعبئة البيانات.
                 </div>
             )}
         </div>
