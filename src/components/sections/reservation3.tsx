@@ -11,7 +11,7 @@ declare global {
     }
 }
 
-export default function Reservation2() {
+export default function Reservation3() {
     const [formData, setFormData] = useState({
         name: "",
         phone: "",
