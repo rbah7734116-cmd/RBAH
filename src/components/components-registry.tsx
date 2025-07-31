@@ -70,6 +70,8 @@ const components: Record<string, ComponentType<any>> = {
     Offersservices: dynamic(() => import('./sections/Offersservices')),
     reservation1: dynamic(() => import('./sections/reservation1')),
     reservation2: dynamic(() => import('./sections/reservation2')),
+    reservation3: dynamic(() => import('./sections/reservation3')),
+
 
 
 
