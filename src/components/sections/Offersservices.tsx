@@ -1,3 +1,6 @@
+"use client";
+
+import Link from "next/link"; // ✅ استيراد Link
 
 export default function PricingCards() {
     const plans = [
@@ -5,6 +8,7 @@ export default function PricingCards() {
             title: "الباقة الأساسية",
             price: "$250",
             description: "تحسينات أساسية لمتجرك",
+            href: "/reservation1", // 🔗 صفحة الحجز الخاصة بهذه الباقة
             features: [
                 "تخصيص كامل لصفحات المنتج، السلة، الدفع",
                 "تحسين تجربة المستخدم وتسهيل التنقل",
@@ -17,6 +21,7 @@ export default function PricingCards() {
             title: "الباقة الاحترافية",
             price: "$500",
             description: "خطة شاملة لتحسين متجرك وزيادة مبيعاتك",
+            href: "/reservation2", // 🔗 صفحة الحجز الخاصة بهذه الباقة
             highlight: true,
             features: [
                 "كل ميزات الباقة الأساسية",
@@ -30,6 +35,7 @@ export default function PricingCards() {
             title: "الباقة المتقدمة",
             price: "$1000",
             description: "باقة متكاملة لأصحاب المتاجر الجادين",
+            href: "/reservation2", // 🔗 أيضًا إلى reservation2 أو صفحة ثالثة إذا وجدت
             features: [
                 "كل ميزات الباقات السابقة",
                 "مساعدتك في إطلاق حملات إعلانية لمتجرك",
@@ -64,9 +70,13 @@ export default function PricingCards() {
                                     </li>
                                 ))}
                             </ul>
-                            <button className="w-full bg-[#003b4e] text-white py-2 rounded-md hover:bg-[#005f75] transition">
-                                احجز الآن
-                            </button>
+
+                            {/* ✅ زر يحول لصفحة الحجز */}
+                            <Link href={plan.href} passHref>
+                                <button className="w-full bg-[#003b4e] text-white py-2 rounded-md hover:bg-[#005f75] transition">
+                                    احجز الآن
+                                </button>
+                            </Link>
                         </div>
                     ))}
                 </div>
