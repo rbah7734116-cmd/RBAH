@@ -67,7 +67,6 @@ const components: Record<string, ComponentType<any>> = {
     refund: dynamic(() => import('./sections/refund')),
     'terms-and-conditions': dynamic(() => import('./sections/terms-and-conditions')),
     checkout: dynamic(() => import('./sections/checkout')),
-    checkout1: dynamic(() => import('./sections/checkout1')),
     Offersservices: dynamic(() => import('./sections/Offersservices')),
     reservation1: dynamic(() => import('./sections/reservation1')),
     reservation2: dynamic(() => import('./sections/reservation2')),
