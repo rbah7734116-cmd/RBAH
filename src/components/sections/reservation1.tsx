@@ -54,7 +54,7 @@ export default function Reservation1() {
         window.Paddle.Checkout.open({
             items: [
                 {
-                    priceId: "pri_01k1dv6qy18hp9vb50ttg85dc5",
+                    priceId: "pri_01k1dv6qy18hp9vb50ttg85dc5", // ← عدل حسب باقتك
                 },
             ],
         });
@@ -62,7 +62,6 @@ export default function Reservation1() {
 
     return (
         <div className="bg-white text-black p-6 rounded-xl shadow-lg max-w-lg mx-auto mt-12 border border-gray-200">
-            {/* نص إرشادي مهم */}
             <p className="mb-4 text-center text-sm text-gray-600">
                 Please fill in your details carefully. We will contact you after you complete the payment to start preparing your project.
                 Providing accurate information helps avoid payment issues or delays.
@@ -128,7 +127,6 @@ export default function Reservation1() {
                         <option value="Canada">Canada</option>
                         <option value="Australia">Australia</option>
                         <option value="Other">Other</option>
-                        {/* ممكن تضيف دول أكثر حسب جمهورك */}
                     </select>
                 </div>
 
@@ -167,7 +165,12 @@ export default function Reservation1() {
                         You can now complete the payment.
                         <br />
                         We will contact you at the scheduled time. By completing the payment, you agree to receive our call and accept our{" "}
-                        <a href="/privacy" className="underline text-blue-600" target="_blank" rel="noopener noreferrer">
+                        <a
+                            href="/privacy"
+                            className="underline text-blue-600"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             Privacy Policy
                         </a>
                         .
