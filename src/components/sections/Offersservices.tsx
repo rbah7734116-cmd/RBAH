@@ -1,47 +1,47 @@
 "use client";
 
-import Link from "next/link"; // ✅ استيراد Link
+import Link from "next/link";
 
 export default function PricingCards() {
     const plans = [
         {
-            title: "الباقة الأساسية",
+            title: "Basic Plan",
             price: "$250",
-            description: "تحسينات أساسية لمتجرك",
-            href: "/reservation1", // 🔗 صفحة الحجز الخاصة بهذه الباقة
+            description: "Essential improvements for your store",
+            href: "/reservation1",
             features: [
-                "تخصيص كامل لصفحات المنتج، السلة، الدفع",
-                "تحسين تجربة المستخدم وتسهيل التنقل",
-                "تسريع المتجر وتهيئته للموبايل",
-                "دعم فني لمدة 14 يومًا",
-                "تسليم خلال 5 أيام عمل"
+                "Full customization of product, cart, and checkout pages",
+                "Improved user experience and easier navigation",
+                "Store speed optimization and mobile readiness",
+                "14-day technical support",
+                "Delivery within 5 business days"
             ]
         },
         {
-            title: "الباقة الاحترافية",
+            title: "Professional Plan",
             price: "$500",
-            description: "خطة شاملة لتحسين متجرك وزيادة مبيعاتك",
-            href: "/reservatio", // 🔗 صفحة الحجز الخاصة بهذه الباقة
+            description: "A comprehensive plan to enhance your store and boost sales",
+            href: "/reservatio",
             highlight: true,
             features: [
-                "كل ميزات الباقة الأساسية",
-                "تحليل السوق واقتراح 4 منتجات واعدة",
-                "تحديد المنتج الأنسب لجمهورك",
-                "تخصيص التصميم الكامل للصفحات",
-                "تحسين صفحات المنتجات لتحقيق مبيعات أفضل"
+                "All features from the Basic Plan",
+                "Market analysis and 4 promising product suggestions",
+                "Identify the best product for your audience",
+                "Full design customization of all pages",
+                "Product page optimization for better conversions"
             ]
         },
         {
-            title: "الباقة المتقدمة",
+            title: "Advanced Plan",
             price: "$1000",
-            description: "باقة متكاملة لأصحاب المتاجر الجادين",
-            href: "/reservation", // 🔗 أيضًا إلى reservation2 أو صفحة ثالثة إذا وجدت
+            description: "A complete solution for serious store owners",
+            href: "/reservation",
             features: [
-                "كل ميزات الباقات السابقة",
-                "مساعدتك في إطلاق حملات إعلانية لمتجرك",
-                "تحسين التحويل بشكل احترافي",
-                "تحسين تجربة الشراء لكل خطوات العميل",
-                "دعم مخصص ومتابعة شخصية"
+                "All features from previous plans",
+                "Assistance in launching advertising campaigns",
+                "Professional conversion rate optimization",
+                "Optimized buying journey for every customer step",
+                "Dedicated support and personal follow-up"
             ]
         }
     ];
@@ -49,8 +49,8 @@ export default function PricingCards() {
     return (
         <div className="bg-gradient-to-b from-[#003b4e] to-[#002f3e] py-16 px-4">
             <div className="max-w-6xl mx-auto text-center">
-                <h2 className="text-white text-4xl font-bold mb-4">خطط الأسعار</h2>
-                <p className="text-white/70 mb-12">اختر الباقة الأنسب لمتجرك وابدأ رحلة التحسين الآن</p>
+                <h2 className="text-white text-4xl font-bold mb-4">Pricing Plans</h2>
+                <p className="text-white/70 mb-12">Choose the best plan for your store and start optimizing today</p>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {plans.map((plan, index) => (
@@ -71,12 +71,10 @@ export default function PricingCards() {
                                 ))}
                             </ul>
 
-                            {/* ✅ زر يحول لصفحة الحجز */}
                             <Link href={plan.href} passHref>
                                 <button className="w-full border border-[#003b4e] text-[#003b4e] py-2 rounded-md hover:bg-[#003b4e] hover:text-white transition">
-                                    احجز الآن
+                                    Book Now
                                 </button>
-
                             </Link>
                         </div>
                     ))}
