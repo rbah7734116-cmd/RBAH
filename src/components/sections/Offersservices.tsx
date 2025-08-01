@@ -72,8 +72,8 @@ export default function PricingCards() {
                             </ul>
 
                             <Link href={plan.href} passHref>
-                                <button className="w-full border border-[#003b4e] text-[#003b4e] py-2 rounded-md hover:bg-[#003b4e] hover:text-white transition">
-                                    Book Now
+                                <button className="w-full bg-[#003b4e] text-white py-2 rounded-md hover:bg-[#005f75] transition">
+                                    احجز الآن
                                 </button>
                             </Link>
                         </div>
