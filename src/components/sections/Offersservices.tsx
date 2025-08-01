@@ -47,7 +47,7 @@ export default function PricingCards() {
     ];
 
     return (
-        <div className="bg-gradient-to-b from-[#003b4e] to-[#002f3e] py-16 px-4">
+        <div className="bg-white py-16 px-4">
             <div className="max-w-6xl mx-auto text-center">
                 <h2 className="text-white text-4xl font-bold mb-4">Pricing Plans</h2>
                 <p className="text-white/70 mb-12">Choose the best plan for your store and start optimizing today</p>
