@@ -13,6 +13,9 @@ backgroundImage:
 
 sections:
   - type: Offersservices
+  - type: SocialIconsSection
+
+
 
   
 
