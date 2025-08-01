@@ -73,9 +73,10 @@ export default function PricingCards() {
 
                             {/* ✅ زر يحول لصفحة الحجز */}
                             <Link href={plan.href} passHref>
-                                <button className="w-full bg-[#003b4e] text-white py-2 rounded-md hover:bg-[#005f75] transition">
+                                <button className="w-full border border-[#003b4e] text-[#003b4e] py-2 rounded-md hover:bg-[#003b4e] hover:text-white transition">
                                     احجز الآن
                                 </button>
+
                             </Link>
                         </div>
                     ))}
