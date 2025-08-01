@@ -14,6 +14,7 @@ declare global {
 export default function Reservation3() {
     const [formData, setFormData] = useState({
         name: "",
+        email: "", // تمت إضافة حقل الإيميل
         phone: "",
         date: "",
         time: "",
@@ -52,7 +53,7 @@ export default function Reservation3() {
         window.Paddle.Checkout.open({
             items: [
                 {
-                    priceId: "pri_01k1dvabxxd4", // ← Update this according to your new plan
+                    priceId: "pri_01k1dvabxxd4",
                 },
             ],
         });
@@ -71,6 +72,19 @@ export default function Reservation3() {
                         type="text"
                         placeholder="Full name"
                         value={formData.name}
+                        onChange={handleInputChange}
+                        required
+                    />
+                </div>
+
+                <div>
+                    <Label htmlFor="email">Email</Label>
+                    <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        placeholder="Your email"
+                        value={formData.email}
                         onChange={handleInputChange}
                         required
                     />
@@ -131,8 +145,7 @@ export default function Reservation3() {
                             rel="noopener noreferrer"
                         >
                             Privacy Policy
-                        </a>{" "}
-                        .
+                        </a>.
                     </p>
 
                     <div className="flex items-center justify-center space-x-2 rtl:space-x-reverse text-sm">
