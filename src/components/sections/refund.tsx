@@ -34,7 +34,7 @@ export default function RefundPolicy() {
                 Once a package is purchased and our team begins communication, planning, or development, the service is considered initiated and is therefore non-refundable.
             </p>
             <p>
-                We encourage customers to carefully review the details of each package before purchasing. If you're uncertain which plan best suits your needs, feel free to <a href="https://api.whatsapp.com/send/?phone=905525909960&text&type=phone_number&app_absent=0" target="_blank">contact us on WhatsApp</a> for guidance.
+                We encourage customers to carefully review the details of each package before purchasing. If you&#39;re uncertain which plan best suits your needs, feel free to <a href="https://api.whatsapp.com/send/?phone=905525909960&text&type=phone_number&app_absent=0" target="_blank">contact us on WhatsApp</a> for guidance.
             </p>
 
             <h2>6. Contact Us</h2>
