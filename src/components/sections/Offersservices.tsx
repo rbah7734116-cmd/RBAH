@@ -47,7 +47,7 @@ export default function PricingCards() {
     ];
 
     return (
-        <div className="bg-white py-16 px-4">
+        <div className="bg-transparent py-16 px-4">
             <div className="max-w-6xl mx-auto text-center">
                 <h2 className="text-white text-4xl font-bold mb-4">Pricing Plans</h2>
                 <p className="text-white/70 mb-12">Choose the best plan for your store and start optimizing today</p>
@@ -56,13 +56,18 @@ export default function PricingCards() {
                     {plans.map((plan, index) => (
                         <div
                             key={index}
-                            className={`rounded-xl shadow-lg p-8 border transition-all duration-300 bg-white ${plan.highlight ? "border-yellow-400 scale-105" : "border-gray-200"
-                                }`}
+                            className={`rounded-xl shadow-lg p-8 border transition-all duration-300 bg-white text-left ${plan.highlight ? "border-yellow-400 scale-105" : "border-gray-200"}`}
+                            dir="ltr"
                         >
-                            <h3 className="text-xl font-semibold mb-2 text-[#003b4e]">{plan.title}</h3>
-                            <p className="text-gray-600 mb-4">{plan.description}</p>
-                            <div className="text-3xl font-bold text-[#003b4e] mb-6">{plan.price}</div>
-                            <ul className="text-gray-700 space-y-2 mb-6">
+
+
+                            <h3 className="text-lg md:text-xl font-semibold mb-2 text-[#003b4e] whitespace-nowrap text-center">
+                                {plan.title}
+                            </h3>
+
+                            <p className="text-gray-600 mb-4 text-sm text-center">{plan.description}</p>
+                            <div className="text-3xl font-bold text-[#003b4e] mb-6 text-center">{plan.price}</div>
+                            <ul className="text-gray-700 space-y-2 mb-6 text-sm">
                                 {plan.features.map((feature, i) => (
                                     <li key={i} className="flex items-start gap-2">
                                         <span className="text-green-600">✓</span>
@@ -73,7 +78,7 @@ export default function PricingCards() {
 
                             <Link href={plan.href} passHref>
                                 <button className="w-full bg-[#003b4e] text-white py-2 rounded-md hover:bg-[#005f75] transition">
-                                    احجز الآن
+                                    GET STARTED
                                 </button>
                             </Link>
                         </div>
