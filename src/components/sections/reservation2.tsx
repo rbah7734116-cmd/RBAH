@@ -14,7 +14,9 @@ declare global {
 export default function Reservation2() {
     const [formData, setFormData] = useState({
         name: "",
+        email: "",
         phone: "",
+        country: "",
         date: "",
         time: "",
     });
@@ -77,6 +79,19 @@ export default function Reservation2() {
                 </div>
 
                 <div>
+                    <Label htmlFor="email">Email Address</Label>
+                    <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        placeholder="example@email.com"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        required
+                    />
+                </div>
+
+                <div>
                     <Label htmlFor="phone">Phone Number</Label>
                     <Input
                         id="phone"
@@ -87,6 +102,25 @@ export default function Reservation2() {
                         onChange={handleInputChange}
                         required
                     />
+                </div>
+
+                <div>
+                    <Label htmlFor="country">Country</Label>
+                    <select
+                        id="country"
+                        name="country"
+                        value={formData.country}
+                        onChange={handleInputChange}
+                        required
+                        className="w-full border border-gray-300 rounded px-3 py-2"
+                    >
+                        <option value="" disabled>Select your country</option>
+                        <option value="USA">United States</option>
+                        <option value="UK">United Kingdom</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Australia">Australia</option>
+                        <option value="Other">Other</option>
+                    </select>
                 </div>
 
                 <div>
