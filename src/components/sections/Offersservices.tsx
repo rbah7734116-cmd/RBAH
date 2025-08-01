@@ -28,7 +28,11 @@ export default function PricingCards() {
                 "Market analysis and 4 promising product suggestions",
                 "Identify the best product for your audience",
                 "Full design customization of all pages",
-                "Product page optimization for better conversions"
+                "Product page optimization for better conversions",
+                "One custom promotional video (15–30s) for your main product",
+                "Competitor analysis report with ad examples and insights",
+                "One high-converting landing page for your main product",
+                "Pixel integration (Meta, Google, TikTok)"
             ]
         },
         {
@@ -38,9 +42,13 @@ export default function PricingCards() {
             href: "/reservation",
             features: [
                 "All features from previous plans",
-                "Assistance in launching advertising campaigns",
-                "Professional conversion rate optimization",
-                "Optimized buying journey for every customer step",
+                "Complete ad campaign setup (targeting, creatives, and launch)",
+                "Custom-designed landing pages for products or email capture",
+                "Automated email marketing setup (Klaviyo/Mailchimp)",
+                "Live 1-on-1 strategy session (Zoom call)",
+                "Detailed monthly performance report and growth plan",
+                "Professional product upload (up to 10 products)",
+                "Conversion-optimized buying journey",
                 "Dedicated support and personal follow-up"
             ]
         }
@@ -59,8 +67,6 @@ export default function PricingCards() {
                             className={`rounded-xl shadow-lg p-8 border transition-all duration-300 bg-white text-left ${plan.highlight ? "border-yellow-400 scale-105" : "border-gray-200"}`}
                             dir="ltr"
                         >
-
-
                             <h3 className="text-lg md:text-xl font-semibold mb-2 text-[#003b4e] whitespace-nowrap text-center">
                                 {plan.title}
                             </h3>
