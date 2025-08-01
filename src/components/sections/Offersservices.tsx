@@ -90,6 +90,20 @@ export default function PricingCards() {
                         </div>
                     ))}
                 </div>
+
+                {/* Text Below Pricing Cards */}
+                <div className="mt-12 text-sm text-white/90 max-w-3xl mx-auto leading-relaxed text-center">
+                    <p>
+                        All our service packages are carefully designed to deliver clear value to your business.
+                        By selecting a plan, you are purchasing a digital service with defined features and delivery timelines.
+                    </p>
+                    <p className="mt-4">
+                        Please make sure to review our <a href="https://gtglow.com/refund/" target="_blank" className="text-yellow-400 underline">Refund Policy</a> before making a payment.
+                    </p>
+                    <p className="mt-4">
+                        If you have any questions, feel free to <a href="https://api.whatsapp.com/send/?phone=905525909960&text&type=phone_number&app_absent=0" target="_blank" className="text-yellow-400 underline">contact us via WhatsApp</a> before proceeding.
+                    </p>
+                </div>
             </div>
         </div>
     );

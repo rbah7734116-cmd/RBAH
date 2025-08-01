@@ -13,7 +13,14 @@ backgroundImage:
 
 sections:
   - type: Offersservices
+  - type: ServicesSection
   - type: SocialIconsSection
+  - type: StoreExamplesSection      
+  - type: FeatureSliderSection
+  - type: ProductShowcaseSection
+  - type: ShowcaseScrollerSection
+  - type: BeforeAfterSection
+  - type: FeatureShowcaseSection
 
 
 

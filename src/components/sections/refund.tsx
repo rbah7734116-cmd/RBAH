@@ -26,7 +26,18 @@ export default function RefundPolicy() {
                 If you believe your payment was unauthorized or fraudulent, please contact us immediately. We will investigate the claim and work with you to find a resolution.
             </p>
 
-            <h2>5. Contact Us</h2>
+            <h2>5. Service Packages Policy</h2>
+            <p>
+                Our service packages (such as Basic, Professional, and Advanced plans) are custom digital services that involve consultation, development, and design work tailored specifically to each customer.
+            </p>
+            <p>
+                Once a package is purchased and our team begins communication, planning, or development, the service is considered initiated and is therefore non-refundable.
+            </p>
+            <p>
+                We encourage customers to carefully review the details of each package before purchasing. If you're uncertain which plan best suits your needs, feel free to <a href="https://api.whatsapp.com/send/?phone=905525909960&text&type=phone_number&app_absent=0" target="_blank">contact us on WhatsApp</a> for guidance.
+            </p>
+
+            <h2>6. Contact Us</h2>
             <p>
                 If you have questions about our Refund Policy, please reach out to:<br />
                 <strong>Email:</strong> rabahmusayid@gmail.com
