@@ -16,6 +16,7 @@ export default function Reservation1() {
         name: "",
         email: "",
         phone: "",
+        country: "",
         date: "",
         time: "",
     });
@@ -61,9 +62,15 @@ export default function Reservation1() {
 
     return (
         <div className="bg-white text-black p-6 rounded-xl shadow-lg max-w-lg mx-auto mt-12 border border-gray-200">
-            <h2 className="text-2xl font-bold mb-6 text-center">Book an Appointment</h2>
-            <form onSubmit={handleSubmit} className="space-y-5">
+            {/* نص إرشادي مهم */}
+            <p className="mb-4 text-center text-sm text-gray-600">
+                Please fill in your details carefully. We will contact you after you complete the payment to start preparing your project.
+                Providing accurate information helps avoid payment issues or delays.
+            </p>
 
+            <h2 className="text-2xl font-bold mb-6 text-center">Book an Appointment</h2>
+
+            <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
                     <Label htmlFor="name">Full Name</Label>
                     <Input
@@ -104,6 +111,28 @@ export default function Reservation1() {
                 </div>
 
                 <div>
+                    <Label htmlFor="country">Country</Label>
+                    <select
+                        id="country"
+                        name="country"
+                        value={formData.country}
+                        onChange={handleInputChange}
+                        required
+                        className="w-full border border-gray-300 rounded px-3 py-2"
+                    >
+                        <option value="" disabled>
+                            Select your country
+                        </option>
+                        <option value="USA">United States</option>
+                        <option value="UK">United Kingdom</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Australia">Australia</option>
+                        <option value="Other">Other</option>
+                        {/* ممكن تضيف دول أكثر حسب جمهورك */}
+                    </select>
+                </div>
+
+                <div>
                     <Label htmlFor="date">Select Date</Label>
                     <Input
                         id="date"
@@ -137,7 +166,11 @@ export default function Reservation1() {
                     <p className="text-gray-700">
                         You can now complete the payment.
                         <br />
-                        We will contact you at the scheduled time. By completing the payment, you agree to receive our call and accept our <a href="/privacy" className="underline text-blue-600" target="_blank">Privacy Policy</a>.
+                        We will contact you at the scheduled time. By completing the payment, you agree to receive our call and accept our{" "}
+                        <a href="/privacy" className="underline text-blue-600" target="_blank" rel="noopener noreferrer">
+                            Privacy Policy
+                        </a>
+                        .
                     </p>
 
                     <div className="flex items-center justify-center space-x-2 rtl:space-x-reverse text-sm">
