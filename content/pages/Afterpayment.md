@@ -14,6 +14,7 @@ backgroundImage:
 sections:
 
   - type: Afterpayment
+  - type: SocialIconsSection
 
 
 
