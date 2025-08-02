@@ -33,9 +33,8 @@ export default function Reservation1() {
 
     const handleRedirectToPayment = () => {
         if (!agreed) return;
-        // فتح رابط الدفع في نافذة جديدة
         window.open(
-            "https://pay.paddle.io/hsc_01k1nnqwvzqre8et9vkzznxnmd_zr5yq5wavf40yas08rr56x5t51c55rt3",
+            "https://pay.paddle.io/hsc_01k1nntpp800578w17ya6j0q4k_g441ffdy32w9czremw6ge21v9vpxn6j5",
             "_blank"
         );
     };

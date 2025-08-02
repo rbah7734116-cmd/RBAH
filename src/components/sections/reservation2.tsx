@@ -34,7 +34,7 @@ export default function Reservation2() {
     const handleCheckout = () => {
         if (!agreed) return;
         // توجيه المستخدم إلى رابط الدفع المخصص
-        window.location.href = "https://pay.paddle.io/hsc_01k1nntpp800578w17ya6j0q4k_g441ffdy32w9czremw6ge21v9vpxn6j5";
+        window.location.href = "https://pay.paddle.io/hsc_01k1nnvcy92dkwbhn7k82srxhp_redqvb621aave6s1ymckvx75s96c65zc";
     };
 
     return (

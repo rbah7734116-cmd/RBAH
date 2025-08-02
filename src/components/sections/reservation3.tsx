@@ -3,13 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { useEffect, useState } from "react";
-
-declare global {
-    interface Window {
-        Paddle: any;
-    }
-}
+import { useState } from "react";
 
 export default function Reservation3() {
     const [formData, setFormData] = useState({
@@ -23,18 +17,6 @@ export default function Reservation3() {
     const [showPayment, setShowPayment] = useState(false);
     const [agreed, setAgreed] = useState(false);
 
-    useEffect(() => {
-        const script = document.createElement("script");
-        script.src = "https://cdn.paddle.com/paddle/v2/paddle.js";
-        script.onload = () => {
-            window.Paddle.Setup({
-                token: "live_ebb713e9b483c666ec833d9e544",
-                environment: "production",
-            });
-        };
-        document.body.appendChild(script);
-    }, []);
-
     const handleInputChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
     ) => {
@@ -44,20 +26,15 @@ export default function Reservation3() {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        console.log("Form submitted:", formData);
         setShowPayment(true);
     };
 
     const handleCheckout = () => {
         if (!agreed) return;
-
-        window.Paddle.Checkout.open({
-            override: "hsc_01k1nnvcy92dkwbhn7k82srxhp_redqvb621aave6s1ymckvx75s96c65zc",
-            customer: {
-                email: formData.email,
-                name: formData.name,
-            },
-        });
+        window.open(
+            "https://pay.paddle.io/hsc_01k1nnqwvzqre8et9vkzznxnmd_zr5yq5wavf40yas08rr56x5t51c55rt3",
+            "_blank"
+        );
     };
 
     return (
@@ -137,8 +114,8 @@ export default function Reservation3() {
                     <p className="text-gray-700">
                         You can now complete the payment.
                         <br />
-                        We will contact you at the scheduled time. By completing the
-                        payment, you agree to receive our call and accept our{" "}
+                        We will contact you at the scheduled time. By completing the payment,
+                        you agree to receive our call and accept our{" "}
                         <a
                             href="/privacy"
                             className="underline text-blue-600"
