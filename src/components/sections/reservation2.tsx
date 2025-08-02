@@ -3,13 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { useEffect, useState } from "react";
-
-declare global {
-    interface Window {
-        Paddle: any;
-    }
-}
+import { useState } from "react";
 
 export default function Reservation2() {
     const [formData, setFormData] = useState({
@@ -23,18 +17,6 @@ export default function Reservation2() {
 
     const [showPayment, setShowPayment] = useState(false);
     const [agreed, setAgreed] = useState(false);
-
-    useEffect(() => {
-        const script = document.createElement("script");
-        script.src = "https://cdn.paddle.com/paddle/v2/paddle.js";
-        script.onload = () => {
-            window.Paddle.Setup({
-                token: "live_ebb713e9b483c666ec833d9e544",
-                environment: "production",
-            });
-        };
-        document.body.appendChild(script);
-    }, []);
 
     const handleInputChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -51,20 +33,14 @@ export default function Reservation2() {
 
     const handleCheckout = () => {
         if (!agreed) return;
-        window.Paddle.Checkout.open({
-            items: [
-                {
-                    priceId: "pri_01k1dv90qzqy50aty4v0tj0bv3",
-                },
-            ],
-        });
+        // توجيه المستخدم إلى رابط الدفع المخصص
+        window.location.href = "https://pay.paddle.io/hsc_01k1nntpp800578w17ya6j0q4k_g441ffdy32w9czremw6ge21v9vpxn6j5";
     };
 
     return (
         <div className="bg-white text-black p-6 rounded-xl shadow-lg max-w-lg mx-auto mt-12 border border-gray-200">
             <h2 className="text-2xl font-bold mb-6 text-center">Book Now</h2>
             <form onSubmit={handleSubmit} className="space-y-5">
-
                 <div>
                     <Label htmlFor="name">Name</Label>
                     <Input
@@ -165,7 +141,7 @@ export default function Reservation2() {
                             rel="noopener noreferrer"
                         >
                             Privacy Policy
-                        </a>{" "}
+                        </a>
                         .
                     </p>
 

@@ -14,7 +14,7 @@ declare global {
 export default function Reservation3() {
     const [formData, setFormData] = useState({
         name: "",
-        email: "", // تمت إضافة حقل الإيميل
+        email: "",
         phone: "",
         date: "",
         time: "",
@@ -50,12 +50,13 @@ export default function Reservation3() {
 
     const handleCheckout = () => {
         if (!agreed) return;
+
         window.Paddle.Checkout.open({
-            items: [
-                {
-                    priceId: "pri_01k1dvabxxd4",
-                },
-            ],
+            override: "hsc_01k1nnvcy92dkwbhn7k82srxhp_redqvb621aave6s1ymckvx75s96c65zc",
+            customer: {
+                email: formData.email,
+                name: formData.name,
+            },
         });
     };
 
@@ -63,7 +64,6 @@ export default function Reservation3() {
         <div className="bg-white text-black p-6 rounded-xl shadow-lg max-w-lg mx-auto mt-12 border border-gray-200">
             <h2 className="text-2xl font-bold mb-6 text-center">Book Now</h2>
             <form onSubmit={handleSubmit} className="space-y-5">
-
                 <div>
                     <Label htmlFor="name">Name</Label>
                     <Input
@@ -137,7 +137,8 @@ export default function Reservation3() {
                     <p className="text-gray-700">
                         You can now complete the payment.
                         <br />
-                        We will contact you at the scheduled time. By completing the payment, you agree to receive our call and accept our{" "}
+                        We will contact you at the scheduled time. By completing the
+                        payment, you agree to receive our call and accept our{" "}
                         <a
                             href="/privacy"
                             className="underline text-blue-600"
@@ -145,7 +146,8 @@ export default function Reservation3() {
                             rel="noopener noreferrer"
                         >
                             Privacy Policy
-                        </a>.
+                        </a>
+                        .
                     </p>
 
                     <div className="flex items-center justify-center space-x-2 rtl:space-x-reverse text-sm">
@@ -156,7 +158,9 @@ export default function Reservation3() {
                             onChange={() => setAgreed(!agreed)}
                             className="w-4 h-4"
                         />
-                        <label htmlFor="agree">I agree to the privacy policy and to receive a call</label>
+                        <label htmlFor="agree">
+                            I agree to the privacy policy and to receive a call
+                        </label>
                     </div>
 
                     <Button

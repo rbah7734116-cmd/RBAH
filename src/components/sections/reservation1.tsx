@@ -3,13 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { useEffect, useState } from "react";
-
-declare global {
-    interface Window {
-        Paddle: any;
-    }
-}
+import { useState } from "react";
 
 export default function Reservation1() {
     const [formData, setFormData] = useState({
@@ -24,18 +18,6 @@ export default function Reservation1() {
     const [showPayment, setShowPayment] = useState(false);
     const [agreed, setAgreed] = useState(false);
 
-    useEffect(() => {
-        const script = document.createElement("script");
-        script.src = "https://cdn.paddle.com/paddle/v2/paddle.js";
-        script.onload = () => {
-            window.Paddle.Setup({
-                token: "live_ebb713e9b483c666ec833d9e544",
-                environment: "production",
-            });
-        };
-        document.body.appendChild(script);
-    }, []);
-
     const handleInputChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
     ) => {
@@ -49,15 +31,13 @@ export default function Reservation1() {
         setShowPayment(true);
     };
 
-    const handleCheckout = () => {
+    const handleRedirectToPayment = () => {
         if (!agreed) return;
-        window.Paddle.Checkout.open({
-            items: [
-                {
-                    priceId: "pri_01k1dv6qy18hp9vb50ttg85dc5", // ← عدل حسب باقتك
-                },
-            ],
-        });
+        // فتح رابط الدفع في نافذة جديدة
+        window.open(
+            "https://pay.paddle.io/hsc_01k1nnqwvzqre8et9vkzznxnmd_zr5yq5wavf40yas08rr56x5t51c55rt3",
+            "_blank"
+        );
     };
 
     return (
@@ -188,11 +168,11 @@ export default function Reservation1() {
                     </div>
 
                     <Button
-                        onClick={handleCheckout}
+                        onClick={handleRedirectToPayment}
                         className="bg-black hover:bg-gray-800 w-full"
                         disabled={!agreed}
                     >
-                        Complete Payment
+                        Go to Payment
                     </Button>
                 </div>
             )}
