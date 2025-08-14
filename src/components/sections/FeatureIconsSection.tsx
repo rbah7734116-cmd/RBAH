@@ -6,10 +6,10 @@ const FeatureIconsSection: React.FC = () => {
             <div className="container mx-auto px-4 text-center max-w-4xl">
 
                 {/* النص الأول */}
-                <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-2">
+                <h4 className="text-xl md:text-2xl lg:text-3xl font-bold mb-2 w-full break-words sm:w-auto sm:break-normal">
                     هل فكرت أو حاولت <span className="text-blue-400">فتح حساب سترايب</span> أو أي بوابة دفع ولم تستطع؟ أو تم رفضك رغم أنك اتبعت كل التعليمات؟<br />
                     بدون <span className="text-blue-400">وسيلة دفع مفعلة</span> عملك لا يمكن أن ينمو...
-                </h3>
+                </h4>
 
                 {/* الصورة الجديدة بين النصين */}
                 <div className="flex justify-center mb-2">
@@ -21,7 +21,7 @@ const FeatureIconsSection: React.FC = () => {
                 </div>
 
                 {/* النص الثاني (تم تكبيره) */}
-                <p className="text-xl md:text-2xl lg:text-3xl mb-2">
+                <p className="text-xl md:text-2xl lg:text-3xl mb-2 w-full break-words sm:w-auto sm:break-normal">
                     الآن يمكنك حل هذه المشاكل بسهولة! تعلم الطريقة الصحيحة لتفعيل بوابات الدفع بدون الحاجة
                     لـ <span className="text-blue-400">سترايب</span> أو شركة <span className="text-blue-400">أمريكية</span> أو <span className="text-blue-400">بريطانية</span> وبعيدًا عن التعقيدات والمشاكل التي تعيق تفعيل الحساب أو تؤدي إلى رفضه.
                 </p>
@@ -50,7 +50,7 @@ const FeatureIconsSection: React.FC = () => {
                 {/* القسم الجديد أسفل الصورة الثانية */}
                 <div className="mt-6">
                     {/* النص الجديد */}
-                    <p className="text-lg md:text-xl lg:text-2xl mb-4">
+                    <p className="text-lg md:text-xl lg:text-2xl mb-4 w-full break-words sm:w-auto sm:break-normal">
                         أحصل على خطوات عملية ومضمونة لإنشاء حسابك بنجاح من المحاولة الأولى.<br />
                         حلول مصممة خصيصاً للتغلب على القيود في الدول العربية.!
                     </p>
@@ -66,7 +66,7 @@ const FeatureIconsSection: React.FC = () => {
 
                     {/* الزر */}
                     <div className="flex justify-center">
-                        <button className="bg-blue-400 hover:bg-blue-500 text-white font-bold py-3 px-6 rounded-lg text-lg md:text-xl transition duration-300">
+                        <button className="bg-blue-400 hover:bg-blue-500 text-white font-bold py-3 px-6 rounded-lg text-lg md:text-xl transition duration-300 w-full sm:w-auto break-words sm:break-normal">
                             !نعم! أريد الإشتراك في هذا العرض الآن<br />
                             فقط بـ 9$ | لفترة محدودة
                         </button>
