@@ -1,81 +1,106 @@
-const services = [
-    {
-        video: '/video/A1.mov',
-        description:
-            'This layout showcases a modern, mobile-first design with bold imagery, smooth transitions, and an intuitive structure optimized for conversions',
-        label: 'Web Store Development',
-    },
-    {
-        video: '/video/A2.mov',
-        description:
-            'Interactive video showcase with dynamic fullscreen preview, inline product info, and a smooth mobile-first layout tailored for user engagement.',
-        label: 'Website Design',
-    },
-    {
-        video: '/video/A3.mov',
-        description:
-            'Clean tab-based video UI that lets users preview treatments by body area. Fast switching, mobile-ready, and built for clarity and seamless UX.',
-        label: 'Brand Identity',
-    },
-    {
-        video: '/video/A4.mov',
-        description:
-            'Interactive 4-column layout with synchronized video and text content. Tab clicks animate both video swap and context text update. Fully responsive and modular.',
-        label: 'Visionary Innovation',
-    },
-    {
-        video: '/video/A5.mov',
-        description:
-            'RobuResponsive comparison section featuring a draggable before/after slider with supporting feature icons and text, optimized for desktop and mobile display.',
-        label: 'Backend Development',
-    },
-    {
-        video: '/video/A6.mov',
-        description:
-            'Interactive video carousel with sleek cards, smooth drag-to-scroll, fullscreen viewing, and a responsive layout crafted for mobile engagement.',
-        label: 'Web Security',
-    },
-];
+import "@fontsource/mada/400.css"; // الوزن العادي
+import "@fontsource/mada/700.css"; // الوزن العريض
+import React from "react";
 
-const VideoShowcaseSection = () => {
+const ShowcaseScrollerSection: React.FC = () => {
     return (
-        <>
-            {/* ✅ عنوان القسم والتزيين فوق البطاقات */}
-            <div className="text-center py-6 space-y-2">
-                <h3 className="text-white text-xl font-semibold tracking-wide uppercase">
-                    — Explore Our Full Creative Capabilities —
-                </h3>
-                <div className="flex justify-center">
-                    <div className="w-32 h-1 bg-[#FFDF20] rounded-full"></div>
+        <section className="w-full bg-[#cfe8ff] flex flex-col items-center" style={{ fontFamily: "'Mada', sans-serif" }}>
+            {/* القسم 1 */}
+            <div className="w-full max-w-[1100px] bg-white rounded-lg shadow-md overflow-hidden mb-0 lg:mb-4">
+                {/* موبايل */}
+                <div className="w-full lg:hidden px-0">
+                    <div className="bg-[#e53935] text-white text-center font-bold text-[15px] py-2 leading-snug">
+                        الكشف على بوابات دفع بدون الحاجة لفتح شركة
+                    </div>
+                    <div className="flex justify-center py-4">
+                        <img src="/images/1.png" alt="Feature 1" className="w-full max-w-[300px] h-auto object-contain" />
+                    </div>
+                    <div className="px-2 pb-4 text-right">
+                        <p className="text-[#142d63] text-[16px] lg:text-[18px] leading-[1.6] font-medium">
+                            في الجزء الأول من الكورس سنكشف لك عن أفضل البدائل الموثوقة لسترايب وبايبال بدون الحاجة لفتح شركة والتي يستخدمها الكثير من رواد الأعمال اليوم مع الطريقة الصحيحة لفتح الحساب وتفعيله. هذا الخيار ممتاز لك إذا كنت تريد بوابة دفع سهلة وبسيطة بدون شركة وهذا يمكن أن يوفر عليك على الأقل 500$ ثمن الشركة لوحدها ناهيك عن باقي المصاريف وكثرة الإثباتات والضرائب!
+                        </p>
+                    </div>
+                </div>
+
+                {/* سطح المكتب */}
+                <div className="hidden lg:flex w-full items-center gap-6 p-4">
+                    <div className="relative w-1/2 flex justify-center">
+                        <img src="/images/1.png" alt="Devices 1" className="w-full max-w-[500px] h-auto object-contain" />
+                    </div>
+                    <div className="w-1/2 text-right">
+                        <div className="bg-[#e53935] text-white font-bold text-lg px-3 py-2 inline-block mb-2">
+                            الكشف على بوابات دفع بدون الحاجة لفتح شركة
+                        </div>
+                        <p className="text-[#142d63] text-[18px] leading-[1.6] font-medium">
+                            في الجزء الأول من الكورس سنكشف لك عن أفضل البدائل الموثوقة لسترايب وبايبال بدون الحاجة لفتح شركة والتي يستخدمها الكثير من رواد الأعمال اليوم مع الطريقة الصحيحة لفتح الحساب وتفعيله. هذا الخيار ممتاز لك إذا كنت تريد بوابة دفع سهلة وبسيطة بدون شركة وهذا يمكن أن يوفر عليك على الأقل 500$ ثمن الشركة لوحدها ناهيك عن باقي المصاريف وكثرة الإثباتات والضرائب!
+                        </p>
+                    </div>
                 </div>
             </div>
 
-            {/* ✅ قسم الفيديوهات */}
-            <section className="pt-0 pb-16 px-4">
-                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {services.map((service, index) => (
-                        <div
-                            key={index}
-                            className="border border-[#FFDF20] p-4 rounded-xl flex flex-col items-center text-center text-white"
-                        >
-                            <video
-                                src={service.video}
-                                autoPlay
-                                loop
-                                muted
-                                playsInline
-                                className="rounded-lg w-full h-74 object-cover mb-4"
-                            />
-                            <p className="text-sm mb-4 leading-relaxed">{service.description}</p>
-                            <button className="border border-[#FFDF20] text-[#FFDF20] px-4 py-2 rounded-full hover:bg-[#FFDF20] hover:text-black transition">
-                                {service.label}
-                            </button>
-                        </div>
-                    ))}
+            {/* القسم 2 */}
+            <div className="w-full max-w-[1100px] bg-white rounded-lg shadow-md overflow-hidden mb-0 lg:mb-4">
+                <div className="w-full lg:hidden px-0">
+                    <div className="bg-[#e53935] text-white text-center font-bold text-[15px] py-2 leading-snug">
+                        طريقة رفع منتجاتك وخدماتك داخل المنصة
+                    </div>
+                    <div className="flex justify-center py-4">
+                        <img src="/images/2.png" alt="Feature 2" className="w-full max-w-[300px] h-auto object-contain" />
+                    </div>
+                    <div className="px-2 pb-4 text-right">
+                        <p className="text-[#142d63] text-[16px] lg:text-[18px] leading-[1.6] font-medium">
+                            الجيد في هذه المنصة أنها لا تعتمد على بوابات دفع خارجية مثل غيرها، بل تمتلك بوابة دفع خاصة بها مدمجة بشكل كامل داخل المنصة نفسها. وهذا يعني أنك لن تضطر للبحث عن حلول معقدة أو ربط منصات خارجية — كل شيء متوفر وجاهز للإستخدام. يمكنك ببساطة رفع منتجاتك أو دوراتك أو خدماتك داخل المنصة والبدء بالبيع مباشرة بكل سهولة وبدون أي تعقيد تقني وهذا ما سنتطرق إليه في هذا الجزء.
+                        </p>
+                    </div>
                 </div>
-            </section>
-        </>
+
+                <div className="hidden lg:flex w-full items-center gap-6 p-4">
+                    <div className="relative w-1/2 flex justify-center">
+                        <img src="/images/2.png" alt="Devices 2" className="w-full max-w-[500px] h-auto object-contain" />
+                    </div>
+                    <div className="w-1/2 text-right">
+                        <div className="bg-[#e53935] text-white font-bold text-lg px-3 py-2 inline-block mb-2">
+                            طريقة رفع منتجاتك وخدماتك داخل المنصة
+                        </div>
+                        <p className="text-[#142d63] text-[18px] leading-[1.6] font-medium">
+                            الجيد في هذه المنصة أنها لا تعتمد على بوابات دفع خارجية مثل غيرها، بل تمتلك بوابة دفع خاصة بها مدمجة بشكل كامل داخل المنصة نفسها. وهذا يعني أنك لن تضطر للبحث عن حلول معقدة أو ربط منصات خارجية — كل شيء متوفر وجاهز للإستخدام. يمكنك ببساطة رفع منتجاتك أو دوراتك أو خدماتك داخل المنصة والبدء بالبيع مباشرة بكل سهولة وبدون أي تعقيد تقني وهذا ما سنتطرق إليه في هذا الجزء.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            {/* القسم 3 */}
+            <div className="w-full max-w-[1100px] bg-white rounded-lg shadow-md overflow-hidden mb-0 lg:mb-4">
+                <div className="w-full lg:hidden px-0">
+                    <div className="bg-[#e53935] text-white text-center font-bold text-[15px] py-2 leading-snug">
+                        طريقة توثيق الحساب ورفع أرباحك من المنصة
+                    </div>
+                    <div className="flex justify-center py-4">
+                        <img src="/images/3.png" alt="Feature 3" className="w-full max-w-[300px] h-auto object-contain" />
+                    </div>
+                    <div className="px-2 pb-4 text-right">
+                        <p className="text-[#142d63] text-[16px] lg:text-[18px] leading-[1.6] font-medium">
+                            في هذا الجزء الأخير من الكورس، سنتعرف سويًا على خطوات توثيق حسابك بطريقة بسيطة وواضحة، دون الحاجة لأي أوراق أو متطلبات معقدة كما هو الحال في بعض بوابات الدفع الأخرى. سنعرض لك الطريقة الصحيحة لتوثيق الحساب خطوة بخطوة. وبعد التوثيق، سنشرح لك بالتفصيل كيفية سحب أرباحك من داخل المنصة.
+                        </p>
+                    </div>
+                </div>
+
+                <div className="hidden lg:flex w-full items-center gap-6 p-4">
+                    <div className="relative w-1/2 flex justify-center">
+                        <img src="/images/3.png" alt="Devices 3" className="w-full max-w-[500px] h-auto object-contain" />
+                    </div>
+                    <div className="w-1/2 text-right">
+                        <div className="bg-[#e53935] text-white font-bold text-lg px-3 py-2 inline-block mb-2">
+                            طريقة توثيق الحساب ورفع أرباحك من المنصة
+                        </div>
+                        <p className="text-[#142d63] text-[18px] leading-[1.6] font-medium">
+                            في هذا الجزء الأخير من الكورس، سنتعرف سويًا على خطوات توثيق حسابك بطريقة بسيطة وواضحة، دون الحاجة لأي أوراق أو متطلبات معقدة كما هو الحال في بعض بوابات الدفع الأخرى. سنعرض لك الطريقة الصحيحة لتوثيق الحساب خطوة بخطوة. وبعد التوثيق، سنشرح لك بالتفصيل كيفية سحب أرباحك من داخل المنصة.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
     );
 };
 
-export default VideoShowcaseSection;
+export default ShowcaseScrollerSection;
