@@ -1,3 +1,4 @@
+import "@fontsource/mada/700.css"; // الخط العريض
 import React from "react";
 
 const BulletIcon: React.FC = () => (
@@ -45,13 +46,16 @@ const BrushUnderline: React.FC = () => (
 );
 
 const QuestionRow: React.FC<{ text: string }> = ({ text }) => (
-    <div className="flex items-start gap-2">
-        {/* الأيقونة على اليمين */}
+    <div className="flex items-start gap-2 -mb-2">
         <div className="flex-shrink-0 mt-[2px]">
             <BulletIcon />
         </div>
-        {/* النص */}
-        <p className="text-[16px] lg:text-[28px] text-[#2c3a4a] leading-[1.7]">{text}</p>
+        <p
+            className="text-[16px] lg:text-[28px] text-[#2c3a4a] leading-[1.6] font-bold"
+            style={{ fontFamily: "'Mada', sans-serif" }}
+        >
+            {text}
+        </p>
     </div>
 );
 
@@ -60,13 +64,17 @@ const TestimonialsSlider: React.FC = () => {
         <section dir="rtl" className="w-full bg-white font-sans py-4 select-none">
             {/* العنوان */}
             <div className="px-4 text-center">
-                <h2 className="text-[24px] lg:text-[48px] leading-[1.5] font-extrabold text-[#133b63]">
-                    هل جربت كل طرق تفعيل بوابات الدفع ولم
-                    <br />
-                    تنجح؟
+                <h2
+                    className="text-[24px] lg:text-[48px] leading-[1.4] font-bold text-[#133b63] mb-1"
+                    style={{ fontFamily: "'Mada', sans-serif" }}
+                >
+                    هل جربت كل طرق تفعيل بوابات الدفع ولم تنجح؟
                 </h2>
 
-                <p className="text-[24px] lg:text-[48px] font-extrabold text-[#ff4b4b] mt-[6px]">
+                <p
+                    className="text-[24px] lg:text-[48px] font-bold text-[#ff4b4b] mt-0"
+                    style={{ fontFamily: "'Mada', sans-serif" }}
+                >
                     دعنا إذا نسألك بكل صراحة...
                 </p>
 
@@ -74,7 +82,7 @@ const TestimonialsSlider: React.FC = () => {
             </div>
 
             {/* المربع الأزرق */}
-            <div className="w-full sm:max-w-3xl mx-auto mt-4 rounded-[8px] border border-[#cfe3f7] bg-[#eaf5ff] shadow-[0_2px_8px_rgba(17,66,107,0.12)] p-4 space-y-4">
+            <div className="w-full sm:max-w-3xl mx-auto mt-4 rounded-[8px] border border-[#cfe3f7] bg-[#eaf5ff] shadow-[0_2px_8px_rgba(17,66,107,0.12)] p-4 space-y-1">
                 <QuestionRow text="هل تجد صعوبة في إيجاد بوابة دفع تدعم عملائك من جميع الدول؟" />
                 <QuestionRow text="هل أُغلق حسابك فجأة على سترايب أو بايبال دون أن تعرف السبب؟" />
                 <QuestionRow text="هل تعاني من صعوبة تفعيل بوابات الدفع لمتجرك أو موقعك؟" />

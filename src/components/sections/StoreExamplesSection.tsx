@@ -1,82 +1,51 @@
-'use client';
-import Image from 'next/image';
+import "@fontsource/mada/400.css"; // الوزن العادي
+import "@fontsource/mada/700.css"; // الوزن العريض
+import React from "react";
 
-export default function StoreExamplesSection() {
-    const storeImages = [
-        '/stores/1a.webp',
-        '/stores/2a.webp',
-        '/stores/3a.webp',
-        '/stores/4a.webp',
-        '/stores/5a.webp',
-        '/stores/6a.webp',
-        '/stores/7a.webp',
-        '/stores/8a.webp',
-        '/stores/9a.webp',
-        '/stores/10a.webp'
-    ];
 
+const StoreExamplesSection: React.FC = () => {
     return (
-        <section className="bg-[#FFEFD5] py-0 relative">
-            <div className="max-w-screen-xl mx-auto px-4 text-center">
-                <h2 className="text-3xl font-bold text-neutral-900 mb-2 px-4 pt-4">
-                    Examples Stores Using ROA 2.0
-                </h2>
-
-
-                <div className="overflow-x-auto">
-                    <div className="flex gap-4 pb-4 w-max">
-                        {storeImages.map((src, idx) => (
-                            <Image
-                                key={idx}
-                                src={src}
-                                alt={`Store Example ${idx + 1}`}
-                                width={219} // سطح المكتب
-                                height={450}
-                                unoptimized
-                                className="rounded-xl shadow-md hover:scale-[1.03] transition-transform duration-300 
-             w-[155.63px] h-[319.93px] 
-             md:w-[218.86px] md:h-[449.97px]"
-                            />
-
-
-
-                        ))}
-                    </div>
-                </div>
-
-                {/* Scroll hint for mobile */}
-                <div className="scroll-hint md:hidden">
-                    ← Scroll
-                </div>
+        <section dir="rtl" className="w-full font-sans py-8 bg-gray-50" style={{ fontFamily: "'Mada', sans-serif" }}>
+            {/* الجزء الأحمر */}
+            <div className="max-w-4xl mx-auto bg-red-400 text-white p-6 rounded-t-xl shadow-md text-center">
+                <p className="text-[16px] lg:text-[20px] leading-[1.6] font-semibold">
+                    الحقيقة المؤلمة هي أنك <span className="font-bold">لن تتمكن</span> من تحقيق ذلك بمفردك –
+                    وهذا ليس بسبب مشكلة فيك ولا لأنك غير قادر. بَل لأن: 99٪ من الشروحات المتاحة
+                    (سواء على يوتيوب أو باقي الكورسات) إما <span className="font-bold">ناقصة</span>،
+                    أو <span className="font-bold">قديمة</span>، لا توصلّك إلى حل للمشكلة.
+                </p>
             </div>
 
-            <style jsx>{`
-            .scroll-hint {
-            position: absolute;
-            top: 20px;
-            right: 16px;
-            background: linear-gradient(to right, transparent, #fff 70%);
-            padding: 5px 10px;
-            font-size: 14px;
-            font-weight: bold;
-            color: #888;
-            border-radius: 30px;
-            animation: scrollHintFade 1.5s infinite ease-in-out;
-            pointer-events: none;
-            }
+            {/* الجزء الأبيض */}
+            <div className="max-w-4xl mx-auto bg-white p-6 rounded-none shadow-md text-center text-[#1f1f1f] text-[16px] lg:text-[18px] leading-[1.8]">
+                <p className="mb-4">
+                    فمعظم من يحاولون تفعيل بوابات الدفع من الدول العربية يصطدمون مباشرة بعقبات تقنية
+                    معقدة، تسبب في تأخير أو رفض طلباتهم مراراً وتكراراً.
+                </p>
+                <p className="text-red-500 font-semibold">
+                    وغالباً ما تكون هذه العقبات غير واضحة أو مشروحة بشكل دقيق، مما يجعل تجاوزها مستحيلاً
+                    دون خبرة أو توجيه عملي مجرب.
+                </p>
+            </div>
 
-            @keyframes scrollHintFade {
-            0%, 100% { opacity: 0.3; transform: translateX(0); }
-            50% { opacity: 1; transform: translateX(-5px); }
-            }
-        `}</style>
+            {/* الجزء الأزرق */}
+            <div className="max-w-4xl mx-auto bg-[#1f3553] text-white p-6 rounded-b-xl shadow-md text-center text-[16px] lg:text-[18px] leading-[1.8]">
+                <p className="mb-4">
+                    هناك <span className="text-orange-400 font-bold">أسرار واحترافيات</span> لا يعرفها حتى
+                    أصحاب تلك الكورسات، لأنهم ببساطة ليسوا خبراء مختصين تعاملوا مع الحالات الحقيقية،
+                    معظم الطرق الشائعة لم تعد تعمل بسبب تشديد القيود، <span className="text-orange-400 font-bold">خاصة في الدول العربية</span>.
+                </p>
+                <p>
+                    ولكن لا تقلق...! لأن هذا هو بالضبط سبب وجودنا هنا اليوم! بعد مساعدة المئات من العملاء
+                    (بمن فيهم أصحاب المتاجر الالكترونية، المستقلين، ورواد الأعمال)، وتجربة كل طريقة ممكنة،
+                    قمنا بتطوير: <span className="text-orange-400 font-bold">"الحل الشامل الوحيد الذي يضمن لك"</span>:
+                </p>
+                <p className="mt-2">
+                    تفعيل بوابات الدفع العالمية مع الاستراتيجيات التي نجحت مع الكثير من أصحاب المشاريع!
+                </p>
+            </div>
         </section>
     );
-}
+};
 
-
-
-
-
-
-
+export default StoreExamplesSection;
